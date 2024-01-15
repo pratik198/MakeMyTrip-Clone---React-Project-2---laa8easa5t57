@@ -1,5 +1,198 @@
-.header1{
-    height: 100vh;
-    // background-color: red;
-    width: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header1-wrapper {
+  height: 62px;
+  width: 100%;
+  z-index: 9999;
+  position: absolute;
+  // background-color: black;
+
+  .header1 {
+    height: 100%;
+    width: 63%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+
+    .logo {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        height: 70%;
+        position: relative;
+        right: 11em;
+      }
+    }
+    .right-sec {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .offer {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 10px;
+        border-right: 2px dotted #494949;
+        position: relative;
+        left: 101px;
+        img {
+          height: 30px;
+          border-radius: 100%;
+        }
+        .text {
+          height: 100%;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          flex-direction: column;
+          color: #fff;
+
+          span {
+            &:first-child {
+              font-size: 0.9rem;
+              font-weight: 700;
+            }
+            &:last-child {
+              font-size: 0.6rem;
+            }
+          }
+        }
+      }
+      .myBiz {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 10px;
+        border-right: 2px dotted #494949;
+        position: relative;
+        left: 110px;
+        img {
+          height: 25px;
+        }
+        .text {
+          height: 100%;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          flex-direction: column;
+          color: #fff;
+
+          span {
+            &:first-child {
+              font-size: 0.9rem;
+              font-weight: 700;
+            }
+            &:last-child {
+              font-size: 0.6rem;
+            }
+          }
+        }
+      }
+      .myTrip {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 10px;
+        position: relative;
+        left: 110px;
+        img {
+          height: 30px;
+          border-radius: 100%;
+        }
+        .text {
+          height: 100%;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          flex-direction: column;
+          color: #fff;
+
+          span {
+            &:first-child {
+              font-size: 0.9rem;
+              font-weight: 700;
+            }
+            &:last-child {
+              font-size: 0.6rem;
+            }
+          }
+        }
+      }
+      .login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(93deg, #53b2fe, #065af3);
+        padding: 17px 20px;
+        border-radius: 5px;
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: #fff;
+        height: 100%;
+        gap: 10px;
+        position: relative;
+        left: 117px;
+
+        .user-name {
+          font-size: 12px;
+          font-weight: 600;
+          font-family: Lato, sans-serif;
+        }
+
+        img {
+          height: 25px;
+          border-radius: 100%;
+          background: #fff;
+        }
+        .down-arrow {
+          font-size: 1.5rem;
+        }
+      }
+
+      .region {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(255, 255, 255, 0.2);
+        padding: 17px 20px;
+        border-radius: 5px;
+        color: #fff;
+        height: 100%;
+        gap: 8px;
+        margin-left: 3px;
+        position: relative;
+        left: 117px;
+
+        .region-details {
+          font-size: 12px;
+          font-weight: 600;
+          font-family: Lato, sans-serif;
+        }
+
+        img {
+          height: 25px;
+          border-radius: 100%;
+          background: #fff;
+        }
+        .down-arrow {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
 }

@@ -1,0 +1,214 @@
+.hotel__cards {
+   cursor: pointer;
+  display: flex;
+    height: 279px;
+    width: 69%;
+    position: relative;
+    bottom: 27em;
+    left: 24%;
+    border: 1px solid #c9c2c2;
+    border-radius: 5px;
+    transition: border-color 0.1s;
+    margin-bottom: 1em;
+    border-radius: 5px;
+  &:hover {
+    border-color: #2a87d3;
+  }
+  .skeleton-loading{
+    background-color: #2e3a43;
+    color: white;
+  }
+  .hotel__img {
+    height: 9em;
+    width: 30%;
+    position: relative;
+    left: 2%;
+    border-radius: 4px;
+    top: 7%;
+    .imgs-hotels {
+      border-radius: 6px;
+      width: 98%;
+      height: 100%;
+      transition: opacity 0.3s ease;
+    }
+    .small-pic{
+
+      .small-img-hotels{
+        position: relative;
+        height: 54px;
+        width: 65px;
+        top: 4px;
+        margin-right: 4px;
+        border-radius: 5px;
+      }
+    }
+  }
+  .hotel__name {
+    // background-color: red;
+    position: relative;
+    height: 100%;
+    left: 2em;
+    width: 41%;
+    display: flex;
+    border-right: 1px solid #cbc9c9;
+    p {
+      position: relative;
+      top: 1em;
+      font-size: 22px;
+      font-family: lato,sans-serif;
+      font-weight: bold;
+      width: 58%;
+    }
+    .couple-frnd{
+      width: 97px;
+      height: 21px;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      top: 5em;
+      border-radius: 4px;
+      border: 1px solid gray;
+      align-content: center;
+      color: gray;
+      .cpl-frndly{
+        height: 20px;
+        width: 102px;
+        font-weight: lighter;
+        font-size: 13px;
+        position: initial;
+        top: 0px;
+        margin-top: 2px;
+      }
+    }
+    .rating-star {
+      position: relative;
+      top: 23px;
+      left: 2%;
+    }
+    .hotel_reviews{
+      height: 55px;
+      width: 94%;
+      position: absolute;
+      top: 121px;
+      
+      .hotel-reviews-line{
+        top: 44px;
+        font-weight: lighter;
+        font-size: 13px;
+        color: #8b572a;
+        width: 235px;
+      }
+    }
+    .free-cancellation{
+  height: 23px;
+  position: absolute;
+  top: 7em;
+  width: 97%;
+      .line-free{
+        font-weight: normal;
+        font-size: 13px;
+        width: 340px;
+        height: 12px;
+        color: #00a19c;
+      }
+    }
+  }
+  .hotel__rating {
+    height: 15px;
+    position: relative;
+    left: 4em;
+    width: 21%;
+    height: 100%;
+    .rating_remark{
+      width: 100px;
+      position: relative;
+      top: 15px;
+      left: 21%;
+      display: flex;
+      justify-content: right;
+      .remark{
+        color: #0b58b4;;
+    font-weight: bolder;
+    font-size: 21px;
+      }
+    }
+    .rating-div{
+      background-color: #0b58b4;
+      width: 34px;
+      height: 21px;
+      border-radius: 4px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      left: 76%;
+      bottom: 3%;
+
+      .rating__color{
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 2px;
+        position: relative;
+        left: 36px;
+      }
+      .reviews-rating{
+        position: relative;
+        top: 22px;
+        right: 40px;
+        font-size: 14px;
+        color: #555151;
+      }
+    }
+    .price_hotel{
+      position: relative;
+      left: 44%;
+      top: 46px;
+      width: 99px;
+      height: 141px;
+      text-align-last: end;
+      .base-price{
+        text-decoration: line-through;
+        font-size: 14px;
+        color: gray;
+      }
+      .cost{
+        font-weight: bolder;
+        font-size: 29px;
+      }
+      .tax{
+        width: 134px;
+        color: gray;
+        position: relative;
+        right: 32px;
+        font-size: 13px;
+      }
+      .footer{
+            color: #0084ff;
+            width: 218px;
+            font-size: 13px;
+            position: relative;
+            right: 8em;
+            top: 3em;
+            font-weight: bolder;
+      }
+    }
+
+  }
+  .footer_offer{
+    background: #d1f8e6;
+    height: 38px;
+    position: absolute;
+    top: 239px;
+    width: 100%;
+    border-radius: 6px;
+    .lines-discount {
+      color: #1a7971;
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+    top: 11px;
+    left: 17px;
+    }
+  }
+}

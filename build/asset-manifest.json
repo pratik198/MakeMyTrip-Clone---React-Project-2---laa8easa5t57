@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6f10a6a1.css",
+    "main.js": "/static/js/main.b2b57e8f.js",
+    "static/media/india.png.png": "/static/media/india.png.e0ccd13f89a382b0379f.png",
+    "static/media/makeMyTrip.avif": "/static/media/makeMyTrip.8b5dd89e8979b52303c4.avif",
+    "static/media/background.avif": "/static/media/background.31a3fecf467ef0434300.avif",
+    "index.html": "/index.html",
+    "static/media/makemytrip2.svg": "/static/media/makemytrip2.eec8a3659a1ee971aa61425b5363147a.svg",
+    "main.6f10a6a1.css.map": "/static/css/main.6f10a6a1.css.map",
+    "main.b2b57e8f.js.map": "/static/js/main.b2b57e8f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f10a6a1.css",
+    "static/js/main.b2b57e8f.js"
+  ]
+}

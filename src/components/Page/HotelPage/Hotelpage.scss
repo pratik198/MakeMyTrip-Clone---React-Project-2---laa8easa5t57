@@ -1,0 +1,230 @@
+.hotelpage {
+  position: relative;
+  top: 61px;
+  height: 100vh;
+  width: 100%;
+
+  .page_header-section {
+    background-color: #cfe9fc;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #c7baba;
+
+    .sub-header-hotel {
+      display: flex;
+      justify-content: space-around;
+      position: relative;
+      top: 17px;
+      .header-section {
+        height: 30px;
+        width: 69%;
+        display: flex;
+        justify-content: center;
+        justify-content: space-between;
+        position: relative;
+        bottom: 4px;
+        p {
+          font-weight: 400;
+          color: #7b7070;
+        }
+      }
+      .search-hotel-field {
+        background-color: white;
+        height: 29px;
+        width: 29px;
+        position: relative;
+        left: 66px;
+        bottom: 6px;
+        img {
+          height: 21px;
+          position: relative;
+          top: 5px;
+          left: 6px;
+        }
+      }
+      #search__hotel_single {
+        position: relative;
+        bottom: 6px;
+        border: none;
+        outline: none;
+        width: 192px;
+        height: 29px;
+      }
+    }
+  }
+  .hotel-cards-details {
+    background-color: white;
+    width: 47%;
+    height: 15em;
+    position: relative;
+    left: 29%;
+    top: 7px;
+    border-radius: 19px;
+    box-shadow: 0 2px 5px #2525254b;
+  }
+  .filter-section {
+    height: 100%;
+    width: 19%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 61px;
+    position: relative;
+    top: 35px;
+    color: #413c3c;
+    cursor: pointer;
+    img{
+      position: unset;
+      bottom: 134px;
+      height: 111px;
+      width: 234px;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px 0 #0003;
+    }
+    iframe {
+      width: 236px;
+      border-radius: 10px;
+      height: 135px;
+    }
+    .map-entry_{
+      align-items: center;
+      background-color: #fff;
+      border: 1px solid #008cff;
+      border-radius: 8px;
+      bottom: 10px;
+      color: #008cff;
+      cursor: pointer;
+      display: flex;
+      font-family: Lato, sans-serif;
+      font-size: 12px;
+      font-weight: 900;
+      height: 32px;
+      justify-content: center;
+      left: 10px;
+      line-height: 14px;
+      outline: 0;
+      position: absolute;
+      text-transform: uppercase;
+      width: calc(80% - 20px);
+      z-index: 1;
+      top: 10%;
+      left: 85px;
+    }
+    p{
+      font-size: 27px;
+      font-weight: 600;
+      position: relative;
+      bottom: 33px;
+    }
+  }
+}
+
+h2 {
+  width: 376px;
+  position: absolute;
+  bottom: 14em;
+  left: 14em;
+}
+
+.header2-wrapperr {
+	height: 60px;
+	width: 100%;
+	z-index: 9999;
+	background: #fff;
+	// box-shadow: 0 2px 5px #2525254b;
+
+	.header2 {
+		height: 100%;
+		width: 80%;
+		margin: auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 5px 0;
+
+		.logo {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			img {
+				height: 70%;
+			}
+		}
+		.navigation-wrapper-2 {
+			height: 60px;
+			border-radius: 10px;
+			z-index: 9;
+
+			.navigation {
+				height: 100%;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: space-evenly;
+
+				.nav-link {
+					height: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-direction: column;
+					padding: 0 10px;
+
+					.icon {
+						font-size: 25px;
+					}
+					span {
+						font-size: 0.9rem;
+						margin-top: 2px;
+					}
+				}
+				.active {
+					color: var(--color-primary);
+					border-bottom: 4px solid var(--color-primary);
+				}
+			}
+		}
+		.right-sec {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			.login {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 17px 20px;
+				border-radius: 5px;
+				font-size: 0.7rem;
+				font-weight: 600;
+				color: #000;
+				height: 90%;
+				gap: 10px;
+				background: #fff;
+
+				.user-name {
+					font-size: 15px;
+					font-weight: 600;
+					height: 40px;
+					width: 100px;
+					border-radius: 5px;
+					background: var(--color-btn-primary-bg);
+					color: #fff;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+
+				img {
+					height: 25px;
+					border-radius: 100%;
+					background: linear-gradient(45deg, #ace143, #219393);
+				}
+				.down-arrow {
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+}

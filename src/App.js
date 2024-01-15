@@ -1,12 +1,10 @@
-import "./App.css";
-import Header1 from "./components/Header1/Header1.jsx";
-
+import Router from "./Router/Router";
 function App() {
   return (
-  <div className="App">
-    <Header1/>
-  </div>
-  )
-  }
+    <div className="App">
+        <Router/>
+    </div>
+  );
+}
 
 export default App;

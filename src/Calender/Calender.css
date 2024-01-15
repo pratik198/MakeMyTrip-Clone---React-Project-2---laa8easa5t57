@@ -1,0 +1,33 @@
+/* Calendar.css */
+.calendar {
+    width: 300px;
+    margin: auto;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  
+  .days {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #e0e0e0;
+  }
+  
+  .day {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .cells {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
