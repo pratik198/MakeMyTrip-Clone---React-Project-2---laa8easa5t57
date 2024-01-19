@@ -1,5 +1,6 @@
 import React from "react";
 import "./Navigation.scss";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
@@ -15,7 +16,7 @@ const Navigation = () => {
           <span>Flights</span>
         </div>
 
-        <div className="img-container">
+        <Link to="/hotels" className="img-container">
           <div className="img-container-inner">
             <img
               className="img__1"
@@ -24,7 +25,7 @@ const Navigation = () => {
             />
           </div>
           <span>Hotels</span>
-        </div>
+        </Link>
 
         <div className="img-container">
           <div className="img-container-inner">

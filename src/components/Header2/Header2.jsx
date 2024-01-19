@@ -13,6 +13,7 @@ import { RiHotelLine } from "react-icons/ri";
 import { AiOutlineCar } from "react-icons/ai";
 import { VscGraphLine } from "react-icons/vsc";
 import { Link } from "react-router-dom";
+
 const Header2 = () => {
   return (
     <section className="header2-wrapper">

@@ -1,8 +1,18 @@
-.offer_sec{
-    border: 2px solid red;
-    height: 260px;
+.main_offer_sec {
+  display: flex;
+  position: relative;
+  top: 35em;
+  background-color: #f2f2f2;
+  height: 100vh;
+  .offer_sec {
+    background-color: white;
+    height: 407px;
     position: relative;
-    top: 39em;
+    top: 69px;
     width: 78%;
     left: 12%;
+    border-radius: 10px;
+    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.1);
+    padding: 25px 40px 40px;
+  }
 }

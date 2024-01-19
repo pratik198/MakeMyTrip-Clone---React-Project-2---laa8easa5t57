@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "./FlightInput.scss";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
 import Main from "../Main/Main";
-import Rotate from "../../Assets/img/rotateLocation.png";
 
 function FlightInput() {
   const [selectedDay, setSelectedDay] = useState("");
@@ -130,22 +128,7 @@ function FlightInput() {
             </div>
           </div>
         </div>
-        <div className="last__div_input">
-          <div className="inner_div_fares_type">
-            <p>
-              Select A<br />
-              Fare Type:
-            </p>
-            <div className="inner_share_div">
-              <input type="radio" name="type" id="regular" />
-              <label htmlFor="oneway">
-                Regular
-                <br />
-                Fares
-              </label>
-            </div>
-          </div>
-        </div>
+      
         <button className="submit-btn">Search</button>
       </div>
     </div>

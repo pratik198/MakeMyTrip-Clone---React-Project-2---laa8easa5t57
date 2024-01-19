@@ -8,7 +8,7 @@ import Hotelpage from "../Components/Page/HotelPage/Hotelpage";
 import HotelDetails from "../Components/HotelDetails/HotelDetails";
 import SearchHeader from "../Components/SearchHeader/SearchHeader";
 import HeaderOnSecondaryPage from "../Components/Page/HotelPage/HeaderOnSecondaryPage";
-
+import Traincard from "../Components/Traincard/Traincard";
 function Router() {
   return (
     <BrowserRouter>
@@ -22,7 +22,7 @@ function Router() {
         <Route path="/hoteldetails" element={<HotelDetails />} />
         <Route path="/hotelpage" element={<Hotelpage />} />
         <Route path="/hotels" element={<Hotelinput />} />
-        <Route path="/trains" element={<Train />} />
+        <Route path="/traincard" element={<Traincard />} />
         <Route path="/flights" element={<FlightCard />} />
       </Routes>
     </BrowserRouter>

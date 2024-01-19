@@ -15,6 +15,7 @@ const HotelInputBox = () => {
   }
   const getData = async () => {
     console.log("get data called");
+    
     const ApisUrl = `https://academics.newtonschool.co/api/v1/bookingportals/hotel?search={"location":"${place}","check_in":"${state.check_in}","check_out":"${state.check_out}"}&day="${day}"`;
     console.log(ApisUrl);
     try {
