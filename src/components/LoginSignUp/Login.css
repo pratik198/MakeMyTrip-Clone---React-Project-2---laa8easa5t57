@@ -1,0 +1,93 @@
+.Login_Parent{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 1250px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 30;
+    display: flex;
+    justify-content: center;
+}
+.Login_child{
+    margin-top: 150px;
+    width: 900px;
+    height: 600px;
+    display: flex;
+}
+.Login_child_img_div{
+    width: 350px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.Login_child_img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.Login_child_login_div{
+    background-color: white;
+    width: 550px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+.Login_child_login{
+    width: 90%;
+    box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    height: 45px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.Login_child_login_lgnbtn,.Login_child_login_signup_btn{
+    width: 200px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.Login_child_login_signup_btn{
+    background: none;
+}
+.Login_child_login_lgnbtn{
+    background-image: linear-gradient(93deg, #53b2fe, #065af3);
+    color: white;
+}
+.Login_comp_email_pass{
+    margin-top: 10px;
+    height: 40px;
+    font-size: 14px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 10px;
+}
+.Login_comp_email_pass:focus{
+    outline: none;
+}
+.Login_child_logindetail_div{
+    margin-top: 10px;
+    height: 250px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.Login_comp_btn{
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+    border: none;
+    height: 50px;
+    margin-top: 20px;
+    width: 400px;
+    border-radius: 10px;
+    background-image: linear-gradient(93deg, #198cea, #065af3);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}

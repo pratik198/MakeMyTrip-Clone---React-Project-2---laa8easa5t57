@@ -1,0 +1,44 @@
+.PrimaryNavigation__parent{
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    height: 47px;
+    padding: 5px;
+    margin-top: 5px;
+}
+.MakeMyTripBag_Button_div{
+    display: flex;
+    justify-content: space-between;
+    height: 47px;
+    padding: 5px;
+    margin-top: -5px;
+}
+/* Image Styling  */
+.MakeMyTripLogo{
+    width: 113px;
+    height: 36px;
+    cursor: pointer;
+}
+.MyTripBag{
+    width: 35px;
+    height: 40px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.LoginSignUpButton{
+    cursor: pointer;
+    width: 213px;
+    height: 42px;
+}
+.MakeMyTripBag_details{
+    margin-right: 20px;
+    color: white;
+    margin-top: 7px;
+    cursor: pointer;
+}
+.MakeMyTripBag_details-p1{
+    font-size: 11px;
+}
+.MakeMyTripBag_details-p2{
+    font-size: 10px;
+}

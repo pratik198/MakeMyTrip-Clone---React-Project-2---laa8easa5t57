@@ -1,0 +1,31 @@
+.PaymentSuccessfull_Parent{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.PaymentSuccessfull_Child{
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.PaymentSuccessfull_Child button{
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin-top: 20px;
+    background-image: linear-gradient(93deg, #198cea, #065af3);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}

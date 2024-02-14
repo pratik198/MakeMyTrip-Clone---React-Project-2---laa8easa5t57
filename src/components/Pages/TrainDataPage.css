@@ -1,0 +1,153 @@
+.TrainDataPage_parent_div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.TrainDataPage_SearchBar_parent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, #051320, #0c2540) !important;
+  position: sticky;
+  top: 0;
+}
+.TrainDataPage_SearchBar {
+  width: 1252px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+.TrainDataPage_SearchBar_From_div,
+.TrainDataPage_SearchBar_To_div,
+.TrainDataPage_SearchBar_Depart_div,
+.TrainDataPage_SearchBar_Passenger_div {
+  width: 160px;
+  height: 48px;
+  margin-left: 40px;
+  color: #008cff;
+  font-size: 12px;
+  padding: 5px;
+  background: hsla(0, 0%, 100%, 0.1);
+  border-radius: 5px;
+}
+.TrainDataPage_Child_Div_Button {
+  margin-left: 200px;
+  border-radius: 34px;
+  background-image: var(
+    --color-btn-primary-bg,
+    linear-gradient(93deg, #53b2fe, #065af3)
+  );
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.2);
+  color: white;
+  border: none;
+  width: 176px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.TrainDataPage_Child_div{
+    width: 1200px;
+    display: flex;
+    margin-top: 20px;
+}
+.TrainDataPage_left_filter_div{
+    height: 500px;
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,.1);
+    width: 260px;
+    position: sticky;
+    top: 85px;
+    padding: 20px 10px 20px 10px;
+}
+.TrainDataPage_Right_data_div{
+    width: 800px;
+    margin-left: 20px;
+}
+.TrainDataPage_Right_data{
+    width: 940px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 20px 10px 20px 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.TrainDataPage_Right_data_details{
+    display: flex;
+    width: 890px;
+    height: 47px;
+    justify-content: space-around;
+}
+.TrainDataPage_Right_data_details img{
+    width: 100px;
+    height: 5px;
+    margin-top: 10px;
+}
+
+.TrainDataPage_Right_data_details_trainType_div{
+    width: 100%;
+    border: 1px solid red;
+}
+.TrainDataPage_Right_data_details_ul{
+    width: 209px;
+    height: 109px;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+.TrainDataPage_Right_data_details_ul li{
+    list-style: none;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+    padding: 10px;
+    width: 209px;
+    height: 109px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.TrainDataPage_Right_data_details_ul li p{
+    margin-top: 15px;
+    font-size: 11px;
+}
+.TrainDataPage_Right_data_details_li_traintype{
+    display: flex;
+    justify-content: space-between;
+}
+.TrainDataPage_Right_data_details_ul li h3{
+    font-size: 14px;
+}
+.Train_available{
+    color: #26B5A9;
+}
+.TrainDataPage_sort_div{
+    height: 66px;
+    width: 100%;
+    background-image: linear-gradient(267deg,#e0f7fe,#e4ecf8);
+    display: flex;
+    justify-content: center;
+}
+.TrainDataPage_sort_child{
+    height: 100%;
+    width: 1250px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.TrainDataPage_sort_child h4{
+    cursor: pointer;
+}
+.TrainDataPage_left_filter_Slider{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.TrainDataPage_left_filter_Coachtype{
+    margin-top: 50px;
+}
+.TrainDataPage_left_filter_Coachtype_checkbox{
+    padding: 10px;
+}
+.TrainDataPage_left_filter_Coachtype_checkbox input{
+    margin-right: 10px;
+}

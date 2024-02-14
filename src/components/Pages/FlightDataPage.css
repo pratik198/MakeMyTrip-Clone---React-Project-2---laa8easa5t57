@@ -1,0 +1,110 @@
+.FlightDataPage_Parent_Div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.FlightDataPage_SearchBar {
+  width: 1252px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+.FlightDataPage_FilterAndData_div {
+  width: 1252px;
+  display: flex;
+}
+.FlightDataPage_Filter_div {
+  margin-top: 20px;
+  width: 290px;
+  height: 750px;
+  padding: 15px;
+  box-shadow: 0 3px 30px 0 rgba(0,0,0,.1);
+  position: sticky;
+  top: 90px;
+}
+.FlightDataPage_data_div {
+  width: 880px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.FlightDataPage_data{
+  margin-top: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+.FlightDataPage_SearchBar_From_div,
+.FlightDataPage_SearchBar_To_div,
+.FlightDataPage_SearchBar_Depart_div,
+.FlightDataPage_SearchBar_Passenger_div {
+    width: 160px;
+    height: 48px;
+    margin-left: 40px;
+    color: #008cff;
+    font-size: 12px;
+    padding: 5px;
+    background: hsla(0,0%,100%,.1);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.FlightDataPage_Child_Div_Button{
+    margin-left: 200px;
+    border-radius: 34px;
+    background-image: var(--color-btn-primary-bg, linear-gradient(93deg, #53b2fe, #065af3));
+    box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.2);
+    color: white;
+    border: none;
+    width: 176px;
+    height: 45px;
+    cursor: pointer;
+}
+.FlightDataPage_SearchBar_parent{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, #051320, #0c2540) !important;
+  position: sticky;
+  top: 0;
+
+}
+.FlightDataPage_Filter_Slider{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.FlightDataPage_Filter_Stop{
+  margin-top: 50px;
+}
+.FlightDataPage_Filter_Departure{
+  margin-top: 50px;
+}
+.FlightDataPage_Filter_Arrival{
+  margin-top: 50px;
+}
+.FlightDataPage_Filter_Stop_checkBox{
+  display: flex;
+  justify-content: space-between;
+}
+.FlightDataPage_Filter_Stop_checkBox_input{
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+}
+.FlightDataPage_Filter_Departure-uldiv ul{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.FlightDataPage_Filter_Departure-uldiv ul li{
+  list-style: none;
+  font-size: 9px;
+  font-weight: 600;
+  height: 64px;
+  width: 56px;
+  border: .7px solid #dfdfdf;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

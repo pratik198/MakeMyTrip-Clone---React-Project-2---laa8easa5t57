@@ -1,0 +1,97 @@
+.SecondaryNvigation__Parent_Container {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  z-index: 2;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  position: fixed;
+}
+
+.SecondaryNvigation__Child_Container {
+  width: 1200px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* border: 1px solid black; */
+}
+.SecondaryNvigation__Navigation_Container_makeMytrip_logo {
+  width: 113px;
+  height: 36px;
+  cursor: pointer;
+}
+.SecondaryNvigation__Navigation_Container {
+  display: flex;
+  /* border: 1px solid red; */
+  width: 902px;
+  height: 80px;
+  align-items: center;
+}
+.SecondaryNvigation__Navigation_Container ul {
+  margin-left: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+}
+.SecondaryNvigation__Navigation_Container ul li {
+  list-style: none;
+  cursor: pointer;
+}
+.SecondaryNvigation__Navigation_FlightsImg_div {
+  height: 40px;
+  width: 42px;
+  overflow: hidden;
+}
+.SecondaryNvigation__Navigation_FlightsImg {
+  width: 180px;
+  margin-top: 10px;
+  margin-left: 8px;
+}
+.SecondaryNvigation__Navigation_HotelsImg_div {
+  height: 40px;
+  width: 42px;
+  overflow: hidden;
+}
+.SecondaryNvigation__Navigation_HotelsImg {
+  width: 175px;
+  margin-left: -33px;
+  margin-top: 11px;
+}
+.SecondaryNvigation__Navigation_TrainsImg_div {
+  height: 40px;
+  width: 42px;
+  overflow: hidden;
+  margin-left: 5px;
+}
+.SecondaryNvigation_trian_Img {
+  width: 200px;
+  margin-left: -120px;
+  margin-top: 7px;
+}
+.SecondaryNvigation__Navigation_BusesImg_div {
+  height: 40px;
+  width: 42px;
+  overflow: hidden;
+}
+.SecondaryNvigation_Buses_Img {
+  width: 220px;
+  margin-left: -175px;
+  margin-top: 6px;
+}
+.SecondaryNavigation_LoginSign_div {
+  width: 119px;
+  height: 58px;
+  display: flex;
+}
+.SecondaryNavigation_login_btn {
+  cursor: pointer;
+  border: none;
+}
+.SecondaryNvigation__Navigation_Container span{
+    font-size: 14px;
+    margin-left: 5px;
+}

@@ -1,0 +1,67 @@
+.w-67 {
+  width: 16.75rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.h-55 {
+  height: 13.75rem;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.bg-slate-50 {
+  background-color: #f0f0f0;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.ml-72 {
+  margin-left: 18rem;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.shadow-[0_8px_30px_rgb(0,0,0,0.12)] {
+  box-shadow: 0 8px 30px rgb(0 0 0 / 0.12);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.scrollbar {
+  scrollbar-width: auto;
+  scrollbar-color: #888 #f0f0f0;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}

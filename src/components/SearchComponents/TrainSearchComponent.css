@@ -1,0 +1,132 @@
+.TrainSearchComponenet_Parent{
+    background-image: url("../../Assets/LandingBackground.png");
+    height: 580px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.TrainSearchComponenet_Child{
+    width: 1200px;
+    height:280px;
+    background-color: white;
+    border-radius: 8px;
+    position: relative;
+    top: -50px;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.TrainlightSearchComponent_Child_radio{
+    width: 1120px;
+    height: 21px;
+    margin-top: 60px;
+    text-align: center;
+}
+.TrainlightSearchComponent_Child_radio p{
+    font-size: 14px;
+}
+.TrainSearchComponenet_Child_Input_detail{
+    margin-top: 20px;
+    width: 1120px;
+    height: 223px;
+}
+.TrainSearchComponenet_Child_Destination_Input{
+    width: 1120px;
+    height: 114px;
+    display: flex;
+}
+
+.TrainSearchComponenet_Child_FromInput{
+    border: 1px solid lightgray;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: none;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    padding: 10px;
+    width: 380px;
+    height: 112px;
+}
+/* #008cff */
+.TrainSearchComponenet_Child_FromInput:hover{
+    background-color: #bfdef85d;
+}
+
+.TrainSearchComponenet_Child_FromInput input{
+    margin-top: 20px;
+    font-size: 20px;
+    width: 261px;
+    height: 36px;
+}
+
+.TrainSearchComponenet_Child_FromInput_From{
+    font-weight: bolder;
+    margin-bottom: 5px;
+    margin-top: 25px;
+}
+.TrainSearchComponenet_Child_ToInput_From{
+    font-weight: bolder;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-top: 25px;
+}
+
+.TrainSearchComponenet_Child_ToInput{
+    border: 1px solid lightgray;
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    cursor: pointer;
+    width: 380px;
+    height: 112px;
+}
+.TrainSearchComponenet_Child_ToInput:hover{
+    background-color: #bfdef85d;
+}
+.TrainSearchComponenet_Child_ToInput input{
+    margin-top: 20px;
+    font-size: 20px;
+    width: 261px;
+    height: 36px;
+}
+.TrainSearchComponenet_Child_Departure{
+    border: 1px solid lightgray;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 350px;
+    height: 112px;
+}
+.TrainSearchComponenet_Child_Departure:hover{
+    background-color: #bfdef85d;
+}
+
+.TrainSearchComponenet_Button{
+    width: 216px;
+    height: 44px;
+    border-radius: 34px;
+    border: none;
+    background: linear-gradient(93deg, #53b2fe, #065af3);
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    top: 255px;
+    cursor: pointer;
+}
+.datePicker{
+    position: absolute;
+    left: 640px;
+    top: 130px;
+}
+.TrainToInput{
+    position: relative;
+    left: -380px;
+}

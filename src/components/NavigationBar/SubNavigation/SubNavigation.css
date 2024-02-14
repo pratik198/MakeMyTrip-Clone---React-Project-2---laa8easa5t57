@@ -1,0 +1,131 @@
+.SubNavigation_Parent_div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.SubNavigation_child_div {
+  margin-top: 40px;
+  width: 920px;
+  height: 100px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 8px 30px 0px 30px;
+  z-index: 1;
+  box-shadow: 0px 4px 12px 1px rgba(0, 0, 0, 0.42);
+  -webkit-box-shadow: 0px 4px 12px 1px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 0px 4px 12px 1px rgba(0, 0, 0, 0.42);
+}
+.SubNavigation_child_div ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  cursor: pointer;
+  /* border: 1px solid blue; */
+}
+.SubNavigation_child_div ul li {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  cursor: pointer;
+  font-size: 14px;
+  width: 78.97px;
+  text-align: center;
+  height: 88px;
+  /* border: 1px solid red; */
+}
+/* Nav Logos */
+.SubNavigation_flightsImg_div {
+  height: 52px;
+  width: 50px;
+  overflow: hidden;
+}
+.SubNavigation_flightsImg {
+  width: 250px;
+  margin-top: 10px;
+}
+.SubNavigation_HotelsImg_div {
+  height: 52px;
+  width: 50px;
+  overflow: hidden;
+}
+.SubNavigation_Hotels_Img {
+  width: 250px;
+  margin-left: -49px;
+  margin-top: 12px;
+}
+.SubNavigation_HomeStayImg_div {
+  margin-top:10px;
+  height: 40px;
+  width: 60px;
+  overflow: hidden;
+}
+.SubNavigation_HomeStay_Img {
+  width: 270px;
+  margin-left: -54px;
+  margin-top: -84px;
+}
+.SubNavigation_HolidaysImg_div {
+  margin-top: 10px;
+  height: 40px;
+  width: 60px;
+  overflow: hidden;
+}
+.SubNavigation_Holidays_Img {
+  width: 260px;
+  margin-left: -96px;
+  margin-top: 5px;
+}
+.SubNavigation_trainImg_div {
+  margin-top: 10px;
+  height: 40px;
+  width: 60px;
+  overflow: hidden;
+}
+.SubNavigation_trian_Img {
+  width: 260px;
+  margin-left: -151px;
+}
+.SubNavigation_BusesImg_div {
+  margin-top: 10px;
+  height: 40px;
+  width: 60px;
+  overflow: hidden;
+}
+.SubNavigation_Buses_Img {
+  width: 260px;
+  margin-left: -210px;
+  margin-top: 2px;
+}
+.SubNavigation_cabsImg_div {
+  margin-top: 10px;
+  height: 40px;
+  width: 60px;
+  overflow: hidden;
+}
+.SubNavigation_cabs_Img {
+  width: 260px;
+  margin-left: 4px;
+  margin-top: -77px;
+}
+.SubNavigation_forexImg_div {
+  margin-top: 10px;
+  height: 40px;
+  width: 60px;
+  overflow: hidden;
+}
+.SubNavigation_forex_Img {
+  width: 270px;
+  margin-left: -155px;
+  margin-top: -83px;
+}
+.SubNavigation_TravelImg_div {
+  margin-top: 10px;
+  height: 40px;
+  width: 60px;
+  overflow: hidden;
+}
+.SubNavigation_travel_Img {
+  width: 270px;
+  margin-left: -218px;
+  margin-top: -80px;
+}

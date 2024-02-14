@@ -1,0 +1,208 @@
+.HotelDataPage_parent_section {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.HotelDataPage_Child_section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.HotelDataPage_search_div_Parent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, #051320, #0c2540) !important;
+  position: sticky;
+  top: 0;
+}
+.HotelDataPage_search_div {
+  width: 1252px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+.HotelDataPage_filterAndData_div {
+  width: 1252px;
+  display: flex;
+}
+.HotelDataPage_filter_div {
+  margin-top: 20px;
+  width: 295px;
+  padding: 10px;
+  height: 440px;
+  box-shadow: 0 3px 30px 0 rgba(0,0,0,.1);
+  position: sticky;
+  top: 135px;
+}
+.HotelDataPage_data_component_div {
+  width: 880px;
+  margin-top: 20px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.HotelDataPage_SearchBar_City_div,
+.HotelDataPage_SearchBar_CheckIn_div,
+.HotelDataPage_SearchBar_CheckOut_div,
+.HotelDataPage_SearchBar_Rooms_div {
+  width: 160px;
+  height: 48px;
+  background: #ffffff1a;
+  margin-left: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.HotelDataPage_sort_by_div{
+    width: 1252px;
+    height: 51px;
+    display: flex;
+    align-items: center;
+    z-index: 0;
+}
+.HotelDataPage_sort_by_div h3{
+    margin-left: 100px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #4a4a4a;
+    font-weight: 700;
+}
+.HotelDataPage_sort_by_div h3 span{
+  font-size: 14px;
+  color: #757575;
+  font-weight: 400;
+}
+.HotelDataPage_Child_Div_Button {
+  margin-left: 200px;
+  border-radius: 34px;
+  background-image: var(
+    --color-btn-primary-bg,
+    linear-gradient(93deg, #53b2fe, #065af3)
+  );
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.2);
+  color: white;
+  border: none;
+  width: 176px;
+  height: 45px;
+  cursor: pointer;
+}
+.HotelDataPage_search_div span{
+    font-size: 12px;
+    color: #0084ff;
+    margin-left: 10px;
+}
+.HotelDataPage_sort_by_Parent_div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(269.96deg,#e1ebf7 .02%,#daf8fe 99.99%);
+    position: sticky;
+    top: 70px;
+    z-index: 0;
+}
+.HotelDataPage_data_component{
+  width: 860px;
+  height: 225px;
+  border-radius: 5px;
+  display: flex;
+  cursor: pointer;
+}
+.HotelDataPage_data_component_left{
+  width: 600px;
+  border: 1px solid lightgray;
+  height: 100%;
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 10px;
+  display: flex;
+}
+.HotelDataPage_data_component_Right{
+  width: 260px;
+  border: 1px solid lightgray;
+  height: 100%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.HotelDataPage_data_component_left_image{
+  width: 239px;
+  height: 200px;
+}
+.HotelDataPage_data_component_left_imageimg1{
+  width: 239px;
+  height: 138px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.HotelDataPage_data_component_left_image_Thumbnail{
+  display: flex;
+  padding: 5px;
+}
+.HotelDataPage_data_component_left_imageimg2,.HotelDataPage_data_component_left_imageimg3,.HotelDataPage_data_component_left_imageimg4,.HotelDataPage_data_component_left_imageimg5{
+  width: 56px;
+  height: 50px;
+  margin-left: 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.HotelDataPage_data_component_left_Data{
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.HotelDataPage_data_component_Right{
+  text-align: right;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.HotelDataPage_data_component_left_imageimg1 img{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.thumbnailImgHotelData{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.HotelDataPage_search_HotelInput_div{
+  position: absolute;
+  left: 360px;
+  top: 80px;
+}
+.HotelDataPage_SearchBar_Rooms_div_Input{
+  position: absolute;
+  top: 0;
+  left: 400px;
+}
+
+.HotelDataPage_filter_pricepernight{
+  margin: 10px;
+}
+
+.HotelDataPage_filter_pricepernight h3{
+  margin-bottom: 10px;
+}
+.HotelDataPage_filter_pricepernight input{
+  margin: 7px;
+}
+.HotelDataPage_filter_userrating{
+  margin-top: 20px;
+}
+.HotelDataPage_filter_userrating h3{
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.HotelDataPage_filter_userrating input{
+  margin-top: 10px;
+  margin-left: 17px;
+  margin-right: 7px;
+}
