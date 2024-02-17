@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import "./HotelSearchComponent.css";
 import SubNavigation from "../NavigationBar/SubNavigation/SubNavigation";
 import Offers from "../Offers/Offers";
@@ -13,15 +15,28 @@ const HotelSearchComponent = () => {
   const [flightToOpen, setFlightToOpen] = useState(false);
   const { hotelCity, hotelRoomNo, hotelAdultNo } = useAuth();
   const [isHotelGuestOpen, setIsHotelGuestOpen] = useState(false);
+  const [startDate, setStartDate] = useState(new Date()); // Initialize with current date
   const navigate = useNavigate();
+
   const handleFlightCityInput = () => {
     setFlightToOpen(!flightToOpen);
   };
+
   const handleOpenHotelGuests = () => {
     setIsHotelGuestOpen(!isHotelGuestOpen);
   };
+
   const handleGetHotelData = () => {
     navigate("/hoteldatapage");
+  };
+
+  // Function to format date to "18 Feb 24" format
+  const formatDate = (date) => {
+    return date.toLocaleDateString("en-US", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    });
   };
 
   return (
@@ -47,29 +62,22 @@ const HotelSearchComponent = () => {
             {flightToOpen && <HotelInput onClose={handleFlightCityInput} />}
             <div className="HotelSearchComponenet_Child_ToInput">
               <span>Check-In</span>
-              <input
-                style={{
-                  border: "none",
-                  padding:"5px",
-                  background:"transparent"
-                }}
-                type="date"
-                placeholder="Select a date"
+              <DatePicker
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+                dateFormat="dd MMM yy" // Set the desired format
+                className="date-picker" // Add custom class for styling
               />
-              <span></span>
             </div>
             <div className="HotelSearchComponenet_Child_Departure">
               <span>Check-Out</span>
-              <input
-                style={{
-                  border: "none",
-                  padding:"5px",
-                  background:"transparent"
-                }}
-                type="date"
-                placeholder="Select a date"
+              {/* Add another DatePicker for Check-Out, similar to Check-In */}
+              <DatePicker
+                selected={startDate} // For example, use the same date
+                onChange={(date) => setStartDate(date)}
+                dateFormat="dd MMM yy" // Set the desired format
+                className="date-picker" // Add custom class for styling
               />
-              <span></span>
             </div>
             <div
               onClick={handleOpenHotelGuests}
@@ -81,7 +89,6 @@ const HotelSearchComponent = () => {
                   fontSize: "30px",
                   marginRight: "20px",
                   marginTop: "10px",
-
                 }}
               >
                 <span style={{ fontWeight: "bolder", fontSize: "20px" }}>

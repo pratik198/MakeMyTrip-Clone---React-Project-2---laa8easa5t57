@@ -4,8 +4,8 @@
   justify-content: center;
 }
 .SubNavigation_child_div {
-  margin-top: 40px;
-  width: 920px;
+  margin-top: 75px;
+  width: 67%;
   height: 100px;
   background-color: white;
   border-radius: 8px;
@@ -13,7 +13,6 @@
   z-index: 1;
   box-shadow: 0px 4px 12px 1px rgba(0, 0, 0, 0.42);
   -webkit-box-shadow: 0px 4px 12px 1px rgba(0, 0, 0, 0.42);
-  -moz-box-shadow: 0px 4px 12px 1px rgba(0, 0, 0, 0.42);
 }
 .SubNavigation_child_div ul {
   display: flex;
@@ -54,7 +53,7 @@
   margin-top: 12px;
 }
 .SubNavigation_HomeStayImg_div {
-  margin-top:10px;
+  margin-top: 10px;
   height: 40px;
   width: 60px;
   overflow: hidden;

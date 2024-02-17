@@ -3,44 +3,44 @@ import "./SubNavigation.css";
 import { useNavigate } from "react-router";
 
 const SubNavigation = () => {
-  const [isClicked , setIsClicked] = useState("Flights")
-  const navigate = useNavigate()
-  const handleHotelNavigation = ()=>{
-    navigate("/hotelsearch")
-    setIsClicked("Hotels")
-  }
-  const handleFlightNavigation = ()=>{
-    navigate("/")
-    setIsClicked("Flights")
-  }
-  const handleTrainNavigation =()=>{
-    navigate("/trainsearch")
-    setIsClicked("Trains")
-  }
-  const handleBusNavigation =()=>{
-    navigate("/bussearch")
-    setIsClicked("Buses")
-  }
-  const handleCommingSoonNavigationHomestay = ()=>{
-    navigate("/commingsoonsearch")
-    setIsClicked("Homestays")
-  }
-  const handleCommingSoonNavigationHoliday = ()=>{
-    navigate("/commingsoonsearch")
-    setIsClicked("Holiday")
-  }
-  const handleCommingSoonNavigationCabs = ()=>{
-    navigate("/commingsoonsearch")
-    setIsClicked("Cabs")
-  }
-  const handleCommingSoonNavigationForex = ()=>{
-    navigate("/commingsoonsearch")
-    setIsClicked("ForexCard")
-  }
-  const handleCommingSoonNavigationTravel = ()=>{
-    navigate("/commingsoonsearch")
-    setIsClicked("Travel")
-  }
+  const [isClicked, setIsClicked] = useState("Flights");
+  const navigate = useNavigate();
+  const handleHotelNavigation = () => {
+    navigate("/hotelsearch");
+    setIsClicked("Hotels");
+  };
+  const handleFlightNavigation = () => {
+    navigate("/");
+    setIsClicked("Flights");
+  };
+  const handleTrainNavigation = () => {
+    navigate("/trainsearch");
+    setIsClicked("Trains");
+  };
+  const handleBusNavigation = () => {
+    navigate("/bussearch");
+    setIsClicked("Buses");
+  };
+  const handleCommingSoonNavigationHomestay = () => {
+    navigate("/commingsoonsearch");
+    setIsClicked("Homestays");
+  };
+  const handleCommingSoonNavigationHoliday = () => {
+    navigate("/commingsoonsearch");
+    setIsClicked("Holiday");
+  };
+  const handleCommingSoonNavigationCabs = () => {
+    navigate("/commingsoonsearch");
+    setIsClicked("Cabs");
+  };
+  const handleCommingSoonNavigationForex = () => {
+    navigate("/commingsoonsearch");
+    setIsClicked("ForexCard");
+  };
+  const handleCommingSoonNavigationTravel = () => {
+    navigate("/commingsoonsearch");
+    setIsClicked("Travel");
+  };
   return (
     <div className="SubNavigation_Parent_div">
       <div className="SubNavigation_child_div">
@@ -53,8 +53,21 @@ const SubNavigation = () => {
                   src="https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/B2CHeaderSprite.png"
                 />
               </div>
-              <span style={isClicked === "Flights" ? { color: "#008cff" } : {}}>Flights</span>
-              {isClicked === "Flights" ? (<hr  style={{height: "2px" , backgroundColor:"#008cff", border:"none", marginTop:"18px"}} ></hr>) : ""}
+              <span style={isClicked === "Flights" ? { color: "#008cff" } : {}}>
+                Flights
+              </span>
+              {isClicked === "Flights" ? (
+                <hr
+                  style={{
+                    height: "2px",
+                    backgroundColor: "#008cff",
+                    border: "none",
+                    marginTop: "18px",
+                  }}
+                ></hr>
+              ) : (
+                ""
+              )}
             </span>
           </li>
           <li onClick={handleHotelNavigation}>
@@ -65,8 +78,21 @@ const SubNavigation = () => {
                   src="https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/B2CHeaderSprite.png"
                 />
               </div>
-              <span style={isClicked === "Hotels" ? { color: "#008cff" } : {}}>Hotels</span>
-              {isClicked === "Hotels" ? (<hr  style={{height: "2px" , backgroundColor:"#008cff", border:"none",marginTop:"18px"}} ></hr>) : ""}
+              <span style={isClicked === "Hotels" ? { color: "#008cff" } : {}}>
+                Hotels
+              </span>
+              {isClicked === "Hotels" ? (
+                <hr
+                  style={{
+                    height: "2px",
+                    backgroundColor: "#008cff",
+                    border: "none",
+                    marginTop: "18px",
+                  }}
+                ></hr>
+              ) : (
+                ""
+              )}
             </span>
           </li>
           <li onClick={handleCommingSoonNavigationHomestay}>
@@ -80,7 +106,17 @@ const SubNavigation = () => {
               <span>
                 HomeStays <br></br> & villas
               </span>
-              {isClicked === "Homestays" ? (<hr  style={{height: "2px" , backgroundColor:"#008cff", border:"none"}} ></hr>) : ""}
+              {isClicked === "Homestays" ? (
+                <hr
+                  style={{
+                    height: "2px",
+                    backgroundColor: "#008cff",
+                    border: "none",
+                  }}
+                ></hr>
+              ) : (
+                ""
+              )}
             </span>
           </li>
           <li onClick={handleCommingSoonNavigationHoliday}>
@@ -94,7 +130,17 @@ const SubNavigation = () => {
               <span>
                 Holiday <br></br> Packages
               </span>
-              {isClicked === "Holiday" ? (<hr  style={{height: "2px" , backgroundColor:"#008cff", border:"none"}} ></hr>) : ""}
+              {isClicked === "Holiday" ? (
+                <hr
+                  style={{
+                    height: "2px",
+                    backgroundColor: "#008cff",
+                    border: "none",
+                  }}
+                ></hr>
+              ) : (
+                ""
+              )}
             </span>
           </li>
           <li onClick={handleTrainNavigation}>
@@ -105,8 +151,21 @@ const SubNavigation = () => {
                   src="https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/B2CHeaderSprite.png"
                 />
               </div>
-              <span style={isClicked === "Trains" ? {color: "#008cff" } : {}}>Trains</span>
-              {isClicked === "Trains" ? (<hr  style={{height: "2px" , backgroundColor:"#008cff",border:"none",marginTop:"20px"}} ></hr>) : ""}
+              <span style={isClicked === "Trains" ? { color: "#008cff" } : {}}>
+                Trains
+              </span>
+              {isClicked === "Trains" ? (
+                <hr
+                  style={{
+                    height: "2px",
+                    backgroundColor: "#008cff",
+                    border: "none",
+                    marginTop: "20px",
+                  }}
+                ></hr>
+              ) : (
+                ""
+              )}
             </span>
           </li>
           <li onClick={handleBusNavigation}>
@@ -117,8 +176,21 @@ const SubNavigation = () => {
                   src="https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/B2CHeaderSprite.png"
                 />
               </div>
-              <span style={isClicked === "Buses" ? {  color: "#008cff" } : {}}>Buses</span>
-              {isClicked === "Buses" ? (<hr  style={{height: "2px" , backgroundColor:"#008cff", border:"none",marginTop:"20px"}} ></hr>) : ""}
+              <span style={isClicked === "Buses" ? { color: "#008cff" } : {}}>
+                Buses
+              </span>
+              {isClicked === "Buses" ? (
+                <hr
+                  style={{
+                    height: "2px",
+                    backgroundColor: "#008cff",
+                    border: "none",
+                    marginTop: "20px",
+                  }}
+                ></hr>
+              ) : (
+                ""
+              )}
             </span>
           </li>
           <li onClick={handleCommingSoonNavigationCabs}>
@@ -130,7 +202,18 @@ const SubNavigation = () => {
                 />
               </div>
               <span>Cabs</span>
-              {isClicked === "Cabs" ? (<hr  style={{height: "2px" , backgroundColor:"#008cff", border:"none",marginTop:"20px"}} ></hr>) : ""}
+              {isClicked === "Cabs" ? (
+                <hr
+                  style={{
+                    height: "2px",
+                    backgroundColor: "#008cff",
+                    border: "none",
+                    marginTop: "20px",
+                  }}
+                ></hr>
+              ) : (
+                ""
+              )}
             </span>
           </li>
           <li onClick={handleCommingSoonNavigationForex}>
@@ -144,12 +227,22 @@ const SubNavigation = () => {
               <span>
                 ForexCard <br></br> & Currency
               </span>
-              {isClicked === "ForexCard" ? (<hr  style={{height: "2px" , backgroundColor:"#008cff", border:"none"}} ></hr>) : ""}
+              {isClicked === "ForexCard" ? (
+                <hr
+                  style={{
+                    height: "2px",
+                    backgroundColor: "#008cff",
+                    border: "none",
+                  }}
+                ></hr>
+              ) : (
+                ""
+              )}
             </span>
           </li>
           <li onClick={handleCommingSoonNavigationTravel}>
             <span>
-            <div className="SubNavigation_TravelImg_div">
+              <div className="SubNavigation_TravelImg_div">
                 <img
                   className="SubNavigation_travel_Img"
                   src="https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/B2CHeaderSprite.png"
@@ -158,7 +251,17 @@ const SubNavigation = () => {
               <span>
                 Travel <br></br> Insurance
               </span>
-              {isClicked === "Travel" ? (<hr  style={{height: "2px" , backgroundColor:"#008cff", border:"none"}} ></hr>) : ""}
+              {isClicked === "Travel" ? (
+                <hr
+                  style={{
+                    height: "2px",
+                    backgroundColor: "#008cff",
+                    border: "none",
+                  }}
+                ></hr>
+              ) : (
+                ""
+              )}
             </span>
           </li>
         </ul>

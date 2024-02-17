@@ -6,16 +6,29 @@ import { useAuth } from "../../context/MyContext";
 import { useState } from "react";
 
 const DatePickerComponent = () => {
-  const [isSelectedDayCheckOut, setSelectedDayCheckOut] = useState("");
-  const { setTravelDay} = useAuth();
-  useEffect(()=>{
-    setTravelDay(isSelectedDayCheckOut)
-  },[isSelectedDayCheckOut])
+  const [isSelectedDayCheckOut, setSelectedDayCheckOut] = useState(new Date());
+  const { setTravelDay } = useAuth();
+  useEffect(() => {
+    setTravelDay(isSelectedDayCheckOut);
+  }, [isSelectedDayCheckOut]);
   const CustomInput = ({ value, onClick }) => (
     <input
-      className="w-full p-4 mt-3 border-none focus:outline-none text-sm cursor-pointer bg-transparent"
+      className="custom_input"
+      style={{
+        width: "100%",
+        padding: "1rem",
+        paddingLeft: "0",
+        marginTop: "3px",
+        border: "none",
+        outline: "none",
+        cursor: "pointer",
+        backgroundColor: "transparent",
+        fontSize: "23px", // equivalent to text-lg in Tailwind
+        fontWeight: "bolder",
+        // marginTop: "5px",
+      }}
       type="text"
-      value={moment(value).format("ddd")}
+      value={moment(value).format("DD MMM' ddd")}
       onClick={onClick}
       readOnly
     />

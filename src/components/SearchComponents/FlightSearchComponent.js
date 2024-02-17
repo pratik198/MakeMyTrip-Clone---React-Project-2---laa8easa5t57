@@ -20,6 +20,7 @@ const FlightSearchComponent = () => {
   const { AirportFrom, AirportTo, travellersCount, travelDay, setFlightData } =
     useAuth();
   const navigate = useNavigate();
+  const currentDate = new Date().toISOString().slice(0, 10);
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
@@ -121,6 +122,7 @@ const FlightSearchComponent = () => {
             {flightToOpen && <FlightsTo onclose={handleFlightToOpen} />}
             <div className="FlightSearchComponenet_Child_Departure">
               <span>Departure</span>
+              {/* <DatePicker /> */}
               <DatePicker />
               <span></span>
             </div>
@@ -137,7 +139,7 @@ const FlightSearchComponent = () => {
                 }}
               >
                 {travellersCount}{" "}
-                <span style={{ fontWeight: "bolder", fontSize: "20px" }}>
+                <span style={{ fontWeight: "bolder", fontSize: "26px" }}>
                   Travellers
                 </span>
               </span>
