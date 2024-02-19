@@ -1,46 +1,57 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./SubNavigation.css";
 import { useNavigate } from "react-router";
 
 const SubNavigation = () => {
   const [isClicked, setIsClicked] = useState("Flights");
   const navigate = useNavigate();
+
   const handleHotelNavigation = () => {
     navigate("/hotelsearch");
-    setIsClicked("Hotels");
+    localStorage.setItem("clicked", "Hotels");
   };
   const handleFlightNavigation = () => {
     navigate("/");
-    setIsClicked("Flights");
+    localStorage.setItem("clicked", "Flights");
   };
   const handleTrainNavigation = () => {
     navigate("/trainsearch");
-    setIsClicked("Trains");
+    localStorage.setItem("clicked", "Trains");
   };
   const handleBusNavigation = () => {
     navigate("/bussearch");
-    setIsClicked("Buses");
+    localStorage.setItem("clicked", "Buses");
   };
   const handleCommingSoonNavigationHomestay = () => {
     navigate("/commingsoonsearch");
-    setIsClicked("Homestays");
+    // setIsClicked("Homestays");
+    localStorage.setItem("clicked", "Homestays");
   };
   const handleCommingSoonNavigationHoliday = () => {
     navigate("/commingsoonsearch");
-    setIsClicked("Holiday");
+    // setIsClicked("Holiday");
+    localStorage.setItem("clicked", "Holiday");
   };
   const handleCommingSoonNavigationCabs = () => {
     navigate("/commingsoonsearch");
-    setIsClicked("Cabs");
+    // setIsClicked("Cabs");
+    localStorage.setItem("clicked", "Cabs");
   };
   const handleCommingSoonNavigationForex = () => {
     navigate("/commingsoonsearch");
-    setIsClicked("ForexCard");
+    // setIsClicked("ForexCard");
+    localStorage.setItem("clicked", "ForexCard");
   };
   const handleCommingSoonNavigationTravel = () => {
     navigate("/commingsoonsearch");
-    setIsClicked("Travel");
+    // setIsClicked("Travel");
+    localStorage.setItem("clicked", "Travel");
   };
+  useEffect(() => {
+    // localStorage.setItem("clicked", isClicked);
+    // handleFlightNavigation();
+    // handleBusNavigation();
+  }, []);
   return (
     <div className="SubNavigation_Parent_div">
       <div className="SubNavigation_child_div">
@@ -53,10 +64,16 @@ const SubNavigation = () => {
                   src="https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/B2CHeaderSprite.png"
                 />
               </div>
-              <span style={isClicked === "Flights" ? { color: "#008cff" } : {}}>
+              <span
+                style={
+                  localStorage.getItem("clicked") === "Flights"
+                    ? { color: "#008cff" }
+                    : {}
+                }
+              >
                 Flights
               </span>
-              {isClicked === "Flights" ? (
+              {localStorage.getItem("clicked") === "Flights" ? (
                 <hr
                   style={{
                     height: "2px",
@@ -78,10 +95,16 @@ const SubNavigation = () => {
                   src="https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/B2CHeaderSprite.png"
                 />
               </div>
-              <span style={isClicked === "Hotels" ? { color: "#008cff" } : {}}>
+              <span
+                style={
+                  localStorage.getItem("clicked") === "Hotels"
+                    ? { color: "#008cff" }
+                    : {}
+                }
+              >
                 Hotels
               </span>
-              {isClicked === "Hotels" ? (
+              {localStorage.getItem("clicked") === "Hotels" ? (
                 <hr
                   style={{
                     height: "2px",
@@ -106,7 +129,7 @@ const SubNavigation = () => {
               <span>
                 HomeStays <br></br> & villas
               </span>
-              {isClicked === "Homestays" ? (
+              {localStorage.getItem("clicked") === "Homestays" ? (
                 <hr
                   style={{
                     height: "2px",
@@ -130,7 +153,7 @@ const SubNavigation = () => {
               <span>
                 Holiday <br></br> Packages
               </span>
-              {isClicked === "Holiday" ? (
+              {localStorage.getItem("clicked") === "Holiday" ? (
                 <hr
                   style={{
                     height: "2px",
@@ -151,10 +174,16 @@ const SubNavigation = () => {
                   src="https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/B2CHeaderSprite.png"
                 />
               </div>
-              <span style={isClicked === "Trains" ? { color: "#008cff" } : {}}>
+              <span
+                style={
+                  localStorage.getItem("clicked") === "Trains"
+                    ? { color: "#008cff" }
+                    : {}
+                }
+              >
                 Trains
               </span>
-              {isClicked === "Trains" ? (
+              {localStorage.getItem("clicked") === "Trains" ? (
                 <hr
                   style={{
                     height: "2px",
@@ -176,10 +205,16 @@ const SubNavigation = () => {
                   src="https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/B2CHeaderSprite.png"
                 />
               </div>
-              <span style={isClicked === "Buses" ? { color: "#008cff" } : {}}>
+              <span
+                style={
+                  localStorage.getItem("clicked") === "Buses"
+                    ? { color: "#008cff" }
+                    : {}
+                }
+              >
                 Buses
               </span>
-              {isClicked === "Buses" ? (
+              {localStorage.getItem("clicked") === "Buses" ? (
                 <hr
                   style={{
                     height: "2px",
@@ -201,8 +236,16 @@ const SubNavigation = () => {
                   src="https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/B2CHeaderSprite.png"
                 />
               </div>
-              <span>Cabs</span>
-              {isClicked === "Cabs" ? (
+              <span
+                style={
+                  localStorage.getItem("clicked") === "Cabs"
+                    ? { color: "#008cff" }
+                    : {}
+                }
+              >
+                Cabs
+              </span>
+              {localStorage.getItem("clicked") === "Cabs" ? (
                 <hr
                   style={{
                     height: "2px",
@@ -227,7 +270,7 @@ const SubNavigation = () => {
               <span>
                 ForexCard <br></br> & Currency
               </span>
-              {isClicked === "ForexCard" ? (
+              {localStorage.getItem("clicked") === "ForexCard" ? (
                 <hr
                   style={{
                     height: "2px",
@@ -251,7 +294,7 @@ const SubNavigation = () => {
               <span>
                 Travel <br></br> Insurance
               </span>
-              {isClicked === "Travel" ? (
+              {localStorage.getItem("clicked") === "Travel" ? (
                 <hr
                   style={{
                     height: "2px",

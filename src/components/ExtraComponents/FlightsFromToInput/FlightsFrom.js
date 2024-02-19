@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../../context/MyContext";
-
+import "./FlightsTo.css";
 const FlightsFrom = ({ onclose }) => {
   const [airport, setAirport] = useState("");
   const [airportDetail, setAirportDetail] = useState([]);
@@ -44,8 +44,12 @@ const FlightsFrom = ({ onclose }) => {
   }, [airport]);
 
   return (
-    <div className="w-67 h-55 absolute bg-slate-50 mt-10 p-2 rounded shadow-[0_8px_30px_rgb(0,0,0,0.12)] ">
-      <input className=" mb-3 w-full p-2" onChange={handleChange} />
+    <div className="w-67 h-55 absolute bg-white mt-10 p-2 rounded shadow-[0px 4px 12px 1px rgba(0, 0, 0, 0.42)] flight__to">
+      <input
+        className=" mb-3 w-full p-2 outline-none"
+        onChange={handleChange}
+        placeholder="From"
+      />
       <div className="w-80 h-40 overflow-auto scrollbar">
         <ul className=" cursor-pointer ">
           {airportDetail.map((data, index) => (

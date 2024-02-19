@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./SignUp.css";
-import { Link } from "react-router-dom";
+
 function SignUp({ onClose }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -53,8 +53,6 @@ function SignUp({ onClose }) {
         </div>
         <div className="SignUp_child_SignUp_div">
           <div className="SignUp_child_SignUp">
-            <button className="SignUp_child_SignUp_lgnbtn">Log in</button>
-            &#10240;
             <button className="SignUp_child_SignUp_lgnbtn">SignUp</button>
           </div>
           <div className="SignUp_child_SignUpdetail_div_fn_ln">

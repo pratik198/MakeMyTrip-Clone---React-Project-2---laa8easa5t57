@@ -69,11 +69,18 @@ const HotelInput = ({ onClose }) => {
   };
 
   return (
-    <div className="w-67 h-55 absolute bg-slate-50 mt-10 p-2 rounded shadow-[0_8px_30px_rgb(0,0,0,0.12)] z-10">
+    <div
+      className="w-67 h-55 absolute  mt-10 p-2 rounded "
+      style={{
+        boxShadow: "0px 4px 12px 1px rgba(0, 0, 0, 0.42)",
+        backgroundColor: "white",
+      }}
+    >
       <input
-        className="mb-3 w-full p-2"
+        className="mb-3 w-full p-2 outline-none border-none"
         value={inputValue}
         onChange={handleChange}
+        placeholder="Where do you want to stay?"
       />
       <div className="w-80 h-40 overflow-auto scrollbar">
         <ul className="cursor-pointer">

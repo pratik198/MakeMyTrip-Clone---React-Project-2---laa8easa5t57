@@ -55,6 +55,7 @@ function Login({ onClose }) {
 
   return (
     <div onClick={handleModalOpen} className="Login_Parent">
+      {/* <button>close</button> */}
       <div onClick={handleChildClick} className="Login_child">
         <div className="Login_child_img_div">
           <img
