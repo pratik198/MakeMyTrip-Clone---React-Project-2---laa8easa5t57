@@ -67,7 +67,7 @@ const SubNavigation = () => {
               <span
                 style={
                   localStorage.getItem("clicked") === "Flights"
-                    ? { color: "#008cff" }
+                    ? { color: "#008cff", fontWeight: "bold" }
                     : {}
                 }
               >
@@ -76,7 +76,7 @@ const SubNavigation = () => {
               {localStorage.getItem("clicked") === "Flights" ? (
                 <hr
                   style={{
-                    height: "2px",
+                    height: "3px",
                     backgroundColor: "#008cff",
                     border: "none",
                     marginTop: "18px",
@@ -98,7 +98,7 @@ const SubNavigation = () => {
               <span
                 style={
                   localStorage.getItem("clicked") === "Hotels"
-                    ? { color: "#008cff" }
+                    ? { color: "#008cff", fontWeight: "bold" }
                     : {}
                 }
               >
@@ -107,7 +107,7 @@ const SubNavigation = () => {
               {localStorage.getItem("clicked") === "Hotels" ? (
                 <hr
                   style={{
-                    height: "2px",
+                    height: "3px",
                     backgroundColor: "#008cff",
                     border: "none",
                     marginTop: "18px",
@@ -132,7 +132,7 @@ const SubNavigation = () => {
               {localStorage.getItem("clicked") === "Homestays" ? (
                 <hr
                   style={{
-                    height: "2px",
+                    height: "3px",
                     backgroundColor: "#008cff",
                     border: "none",
                   }}
@@ -156,7 +156,7 @@ const SubNavigation = () => {
               {localStorage.getItem("clicked") === "Holiday" ? (
                 <hr
                   style={{
-                    height: "2px",
+                    height: "3px",
                     backgroundColor: "#008cff",
                     border: "none",
                   }}
@@ -177,7 +177,7 @@ const SubNavigation = () => {
               <span
                 style={
                   localStorage.getItem("clicked") === "Trains"
-                    ? { color: "#008cff" }
+                    ? { color: "#008cff", fontWeight: "bold" }
                     : {}
                 }
               >
@@ -186,7 +186,7 @@ const SubNavigation = () => {
               {localStorage.getItem("clicked") === "Trains" ? (
                 <hr
                   style={{
-                    height: "2px",
+                    height: "3px",
                     backgroundColor: "#008cff",
                     border: "none",
                     marginTop: "20px",
@@ -208,7 +208,7 @@ const SubNavigation = () => {
               <span
                 style={
                   localStorage.getItem("clicked") === "Buses"
-                    ? { color: "#008cff" }
+                    ? { color: "#008cff", fontWeight: "bold" }
                     : {}
                 }
               >
@@ -217,7 +217,7 @@ const SubNavigation = () => {
               {localStorage.getItem("clicked") === "Buses" ? (
                 <hr
                   style={{
-                    height: "2px",
+                    height: "3px",
                     backgroundColor: "#008cff",
                     border: "none",
                     marginTop: "20px",
@@ -248,7 +248,7 @@ const SubNavigation = () => {
               {localStorage.getItem("clicked") === "Cabs" ? (
                 <hr
                   style={{
-                    height: "2px",
+                    height: "3px",
                     backgroundColor: "#008cff",
                     border: "none",
                     marginTop: "20px",
@@ -273,7 +273,7 @@ const SubNavigation = () => {
               {localStorage.getItem("clicked") === "ForexCard" ? (
                 <hr
                   style={{
-                    height: "2px",
+                    height: "3px",
                     backgroundColor: "#008cff",
                     border: "none",
                   }}
@@ -297,7 +297,7 @@ const SubNavigation = () => {
               {localStorage.getItem("clicked") === "Travel" ? (
                 <hr
                   style={{
-                    height: "2px",
+                    height: "3px",
                     backgroundColor: "#008cff",
                     border: "none",
                   }}
