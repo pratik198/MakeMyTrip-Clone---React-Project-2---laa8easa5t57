@@ -35,18 +35,40 @@ function FlightDataPage() {
   const jwtToken = localStorage.getItem("jwtToken");
 
   const handleCheckboxRatingChange = (value) => {
-    setSliderValue(value === sliderValue ? null : value);
+    setSliderValue(value === sliderValue ? "" : value);
+    if (value === sliderValue) {
+      getInitialFlightData();
+    }
   };
 
   const handleClickSet = (type, key, data) => {
     setField(type);
     setValue(key);
     setSliderValue(data);
+    console.log(field);
+    console.log(value);
+    console.log(sliderValue);
   };
 
   const getFlightData = () => {
     const dayAbbreviation = moment(travelDay).format("ddd");
     const api = `https://academics.newtonschool.co/api/v1/bookingportals/flight?day=${dayAbbreviation}&search={"source":"${AirportFrom[2]}","destination":"${AirportTo[2]}"}&filter={"${field}":{"${value}":${sliderValue}}}`;
+    const projectId = "laa8easa5t57";
+
+    fetch(api, {
+      headers: {
+        projectID: projectId,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setSearchResults(data.data.flights);
+      })
+      .catch((error) => console.error("Error fetching flight data:", error));
+  };
+  const getInitialFlightData = () => {
+    const dayAbbreviation = moment(travelDay).format("ddd");
+    const api = `https://academics.newtonschool.co/api/v1/bookingportals/flight?day=${dayAbbreviation}&search={"source":"${AirportFrom[2]}","destination":"${AirportTo[2]}"}`;
     const projectId = "laa8easa5t57";
 
     fetch(api, {
@@ -173,6 +195,7 @@ function FlightDataPage() {
         </div>
       </div>
       <div className="FlightDataPage_Child_Div">
+        {/* <div className="flight_img_img">img</div> */}
         <div className="FlightDataPage_FilterAndData_div">
           <div className="FlightDataPage_Filter_div">
             <div className="FlightDataPage_Filter_Slider">

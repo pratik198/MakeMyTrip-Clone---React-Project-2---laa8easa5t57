@@ -97,6 +97,7 @@ const Offers = () => {
               Holidays
             </li>
           </ul>
+          <div className="divider_offer"></div>
           <div className="next_prev">
             <button
               onClick={handleNext}

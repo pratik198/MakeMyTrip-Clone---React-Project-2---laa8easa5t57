@@ -11,7 +11,7 @@ import FlightsTo from "../ExtraComponents/FlightsFromToInput/FlightsTo";
 import DatePicker from "../ExtraComponents/DatePicker/DatePicker";
 import { useNavigate } from "react-router";
 import moment from "moment";
-
+import FooterComponent from "../ExtraComponents/FooterComponent/FooterComponent";
 const FlightSearchComponent = () => {
   const [selectedOption, setSelectedOption] = useState("oneWay");
   const [showTravellersAndClass, setShowTravellersAndClass] = useState(false);
@@ -49,6 +49,7 @@ const FlightSearchComponent = () => {
       })
       .then((data) => {
         setFlightData(data.data.flights);
+        localStorage.setItem("flightsData", JSON.stringify(data.data.flights));
         console.log(data);
         // console.log(AirportFrom)
         // console.log(AirportTo);
@@ -156,8 +157,22 @@ const FlightSearchComponent = () => {
         >
           SEARCH
         </button>
+        {/* <div className="explore_section">
+          <div className="explore_option">1</div>
+          <div className="explore_option">1</div>
+          <div className="explore_option">1</div>
+          <div className="explore_option">1</div>
+          <div className="explore_option">1</div>
+        </div> */}
+        <div className="flight_add">
+          <img
+            src="https://platforms.makemytrip.com/contents/5eec1a99-d3f3-48ec-9a35-db1d8acf2922"
+            alt=".."
+          />
+        </div>
       </div>
       <Offers />
+      <FooterComponent />
     </div>
   );
 };

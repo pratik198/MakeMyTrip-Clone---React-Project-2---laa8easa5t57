@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* background-color: #f2f2f2; */
 }
 
 .FlightSearchComponenet_Child {
@@ -166,4 +167,31 @@
   position: absolute;
   left: 640px;
   top: 130px;
+}
+
+.flight_add {
+  position: relative;
+  top: 220px;
+}
+
+.flight_add img {
+  height: 85px;
+  position: relative;
+  top: 2px;
+  border-radius: 10px;
+}
+
+.explore_section {
+  position: absolute;
+  top: 356px;
+  border: 1px solid red;
+  height: 54px;
+  width: 79%;
+  border-radius: 33px;
+  display: flex;
+  justify-content: space-around;
+}
+.explore_option {
+  width: 25%;
+  border: 2px solid black;
 }

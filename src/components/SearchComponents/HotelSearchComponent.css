@@ -42,9 +42,9 @@
   height: 112px;
 }
 /* #008cff */
-.HotelSearchComponenet_Child_FromInput:hover {
+/* .HotelSearchComponenet_Child_FromInput:hover {
   background-color: #bfdef85d;
-}
+} */
 .HotelSearchComponenet_Child_FromInput_From {
   font-weight: bolder;
   margin-top: 16px;
@@ -56,6 +56,9 @@
   width: 261px;
   height: 36px;
 }
+/* .HotelSearchComponenet_Child_FromInput input:hover {
+  background-color: #065af3;
+} */
 .HotelSearchComponenet_Child_ToInput {
   border: 1px solid lightgray;
   border-right: none;
@@ -66,18 +69,24 @@
   width: 300px;
   height: 112px;
 }
-.HotelSearchComponenet_Child_ToInput:hover {
+/* .HotelSearchComponenet_Child_ToInput:hover {
   background-color: #bfdef85d;
-}
+} */
 .HotelSearchComponenet_Child_ToInput input {
-  margin-top: 20px;
+  margin-top: 10px;
+  font-weight: bolder;
   width: 261px;
-  height: 36px;
+  height: 49px;
+  font-size: 23px;
+  caret-color: transparent;
 }
 .HotelSearchComponenet_Child_Departure input {
-  margin-top: 20px;
-  width: 225px;
-  height: 36px;
+  margin-top: 10px;
+  font-weight: bolder;
+  width: 261px;
+  height: 49px;
+  font-size: 23px;
+  caret-color: transparent;
 }
 .HotelSearchComponenet_Child_Departure {
   border: 1px solid lightgray;
@@ -89,9 +98,9 @@
   width: 265px;
   height: 112px;
 }
-.HotelSearchComponenet_Child_Departure:hover {
+/* .HotelSearchComponenet_Child_Departure:hover {
   background-color: #bfdef85d;
-}
+} */
 .HotelSearchComponenet_Child_Traveller_Class {
   border: 1px solid lightgray;
   display: flex;
@@ -103,9 +112,9 @@
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-.HotelSearchComponenet_Child_Traveller_Class:hover {
+/* .HotelSearchComponenet_Child_Traveller_Class:hover {
   background-color: #bfdef85d;
-}
+} */
 .HotelSearchComponenet_Button {
   width: 216px;
   height: 44px;
@@ -118,8 +127,14 @@
   top: 255px;
   cursor: pointer;
 }
-.datePicker {
-  position: absolute;
-  left: 640px;
-  top: 130px;
+.date-picker {
+  outline: none;
+  border: none;
+  background-color: white;
 }
+/* 
+.date-picker:hover {
+  background-color: #bfdef85d;
+  outline: none;
+  border: none;
+} */

@@ -10,36 +10,42 @@ function PaymentPage() {
   const [showSuccessfull, setShowSuccessfull] = useState(false);
   const token = localStorage.getItem("jwtToken");
   const taxes = Math.floor(Math.random() * 1000) + 1;
-
+  const [upiId, setUpiId] = useState("");
   const handleOptionClick = (option) => {
     setSelectedOption(option);
+    setShowSuccessfull(false);
   };
 
   const fetchPaymentData = () => {
-    const api =
-      "https://academics.newtonschool.co/api/v1/bookingportals/booking";
-    const projectid = "laa8easa5t57";
+    if (selectedOption === "UPI" && upiId.trim() !== "") {
+      const api =
+        "https://academics.newtonschool.co/api/v1/bookingportals/booking";
+      const projectid = "laa8easa5t57";
 
-    fetch(api, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        projectID: projectid,
-        "Content-Type": "application/json", // Specify the content type
-      },
-      body: JSON.stringify({
-        bookingType: bookingType,
-        bookingDetails: {
-          flightId: bookingId,
-          startDate: "2023-10-09T10:03:53.554+00:00",
-          endDate: "2023-10-09T10:03:53.554+00:00",
+      fetch(api, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          projectID: projectid,
+          "Content-Type": "application/json", // Specify the content type
         },
-      }),
-    }).then((response) => {
-      if (response.ok) {
-        setShowSuccessfull(!showSuccessfull);
-      }
-    });
+        body: JSON.stringify({
+          bookingType: bookingType,
+          bookingDetails: {
+            flightId: bookingId,
+            startDate: "2023-10-09T10:03:53.554+00:00",
+            endDate: "2023-10-09T10:03:53.554+00:00",
+          },
+        }),
+      }).then((response) => {
+        // if (response.ok) {
+        //   setShowSuccessfull(!showSuccessfull);
+        // }
+        if (response.ok) {
+          setShowSuccessfull(true);
+        }
+      });
+    }
   };
 
   return (
@@ -123,6 +129,8 @@ function PaymentPage() {
                 <input
                   style={{ width: "200px", fontSize: "20px", padding: "10px" }}
                   type="text"
+                  value={upiId}
+                  onChange={(e) => setUpiId(e.target.value)}
                 />
                 <button
                   onClick={fetchPaymentData}
@@ -280,7 +288,8 @@ function PaymentPage() {
           </div>
         </div>
       </div>
-      {showSuccessfull && <PaymentSuccessfull />}
+      {/* {showSuccessfull && <PaymentSuccessfull />} */}
+      {selectedOption === "UPI" && showSuccessfull && <PaymentSuccessfull />}
     </div>
   );
 }

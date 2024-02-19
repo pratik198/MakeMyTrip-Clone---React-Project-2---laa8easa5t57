@@ -10,6 +10,7 @@ import HotelInput from "../ExtraComponents/HotelCityInput/HotelCityInput";
 import { useAuth } from "../context/MyContext";
 import HotelGuestsAndRoom from "../ExtraComponents/HotelGuestAndRoom/HotelGuestsAndRoom";
 import { useNavigate } from "react-router";
+import FooterComponent from "../ExtraComponents/FooterComponent/FooterComponent";
 
 const HotelSearchComponent = () => {
   const [flightToOpen, setFlightToOpen] = useState(false);
@@ -66,7 +67,8 @@ const HotelSearchComponent = () => {
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
                 dateFormat="dd MMM yy" // Set the desired format
-                className="date-picker" // Add custom class for styling
+                className="date-picker"
+                // Add custom class for styling
               />
             </div>
             <div className="HotelSearchComponenet_Child_Departure">
@@ -109,6 +111,7 @@ const HotelSearchComponent = () => {
         </button>
       </div>
       <Offers />
+      <FooterComponent />
     </div>
   );
 };

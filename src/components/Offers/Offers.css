@@ -93,6 +93,8 @@
   margin: 0 auto;
   padding: 20px;
   overflow: hidden;
+  position: relative;
+  top: 51px;
 }
 
 .Offers_Navigation_filter {
@@ -136,8 +138,17 @@
 }
 
 .next_prev {
+  position: absolute;
   display: flex;
+  left: 87%;
+  gap: 5px;
+}
+
+.divider_offer {
+  background-color: #cbbdbd;
+  height: 1px;
+  width: 25%;
   position: relative;
-  left: 54%;
-  /* gap: 5px; */
+  top: 36px;
+  right: 286px;
 }

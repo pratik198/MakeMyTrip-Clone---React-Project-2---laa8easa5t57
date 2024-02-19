@@ -17,12 +17,13 @@ export function AuthProvider({ children }) {
     "LKO",
   ]);
   const [travellersCount, setTravellersCount] = useState(0);
+  const [travelDay, setTravelDay] = useState(new Date());
   const [hotelCity, setHotelCity] = useState(["Mumbai"]);
   const [trainJunctionFrom, setTrainJunctionFrom] = useState(["Surat"]);
   const [trainJunctionTo, setTrainJunctionTo] = useState(["Udaipur City"]);
   const [hotelRoomNo, setHotelRoomNo] = useState(1);
   const [hotelAdultNo, setHotelAdultNo] = useState(1);
-  const [travelDay, setTravelDay] = useState("");
+  // const [travelDay, setTravelDay] = useState("");
   const [flightData, setFlightData] = useState([]);
   const [flightId, setFlightId] = useState("");
   const [hotelCheckin, setHotelCheckin] = useState("");

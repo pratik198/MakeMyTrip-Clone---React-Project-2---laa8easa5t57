@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import "./BookingPageFlight.css";
 import SecondaryNav2 from "../NavigationBar/SecondaryNavigation/SecondaryNav2";
 import { useAuth } from "../context/MyContext";
@@ -15,7 +15,7 @@ function BookingPageFlight() {
   } = useAuth();
   const [flightBookingData, setFlightBookingDetailData] = useState([]);
   const navigate = useNavigate();
-  const taxes = Math.floor(Math.random() * 1000) + 1;
+  const taxes = useMemo(() => Math.floor(Math.random() * 1000) + 1, []); // Memoized taxes calculation
 
   // State for input values
   const [mobileNo, setMobileNo] = useState("");
@@ -145,8 +145,7 @@ function BookingPageFlight() {
                     paddingLeft: "20px",
                   }}
                 >
-                  {flightBookingData.duration}h{" "}
-                  {Math.floor(Math.random() * 10) + 1}m
+                  {flightBookingData.duration}h {flightBookingData.minutes}m
                 </p>
                 <h3
                   style={{

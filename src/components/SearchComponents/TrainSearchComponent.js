@@ -9,11 +9,11 @@ import DatePicker from "../ExtraComponents/DatePicker/DatePicker";
 import { useNavigate } from "react-router";
 import TrainInput from "../ExtraComponents/TrainFromToInput/TrainFromInput";
 import TrainToInput from "../ExtraComponents/TrainFromToInput/TrainToInput";
-
+import FooterComponent from "../ExtraComponents/FooterComponent/FooterComponent";
 const TrainSearchComponent = () => {
   const [TrainFromOpen, setTrainFromOpen] = useState(false);
-  const [TrainToOpen , setTrainsToOpen] = useState(false);
-  const { trainJunctionTo,trainJunctionFrom } = useAuth();
+  const [TrainToOpen, setTrainsToOpen] = useState(false);
+  const { trainJunctionTo, trainJunctionFrom } = useAuth();
   const navigate = useNavigate();
 
   const handleTrainFormOpen = () => {
@@ -22,9 +22,9 @@ const TrainSearchComponent = () => {
   const handleSearch = () => {
     navigate("/traindatapage");
   };
-  const handleTrainToOpen = ()=>{
+  const handleTrainToOpen = () => {
     setTrainsToOpen(!TrainToOpen);
-  }
+  };
   return (
     <div className="TrainSearchComponenet_Parent">
       <PrimaryNavigation />
@@ -46,13 +46,20 @@ const TrainSearchComponent = () => {
               </span>
             </div>
             {TrainFromOpen && <TrainInput onClose={handleTrainFormOpen} />}
-            <div onClick={handleTrainToOpen} className="TrainSearchComponenet_Child_ToInput">
+            <div
+              onClick={handleTrainToOpen}
+              className="TrainSearchComponenet_Child_ToInput"
+            >
               <span>To</span>
-              <span className="TrainSearchComponenet_Child_ToInput_From">{trainJunctionTo}</span>
+              <span className="TrainSearchComponenet_Child_ToInput_From">
+                {trainJunctionTo}
+              </span>
             </div>
-            {TrainToOpen && <div className="TrainToInput">
-              <TrainToInput onClose={handleTrainToOpen}/>
-            </div> }
+            {TrainToOpen && (
+              <div className="TrainToInput">
+                <TrainToInput onClose={handleTrainToOpen} />
+              </div>
+            )}
             <div className="TrainSearchComponenet_Child_Departure">
               <span>Travel Date</span>
               <DatePicker />
@@ -68,6 +75,7 @@ const TrainSearchComponent = () => {
         </button>
       </div>
       <Offers />
+      <FooterComponent />
     </div>
   );
 };
