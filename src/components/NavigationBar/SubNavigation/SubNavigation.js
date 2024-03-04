@@ -303,7 +303,7 @@ const SubNavigation = () => {
                   }}
                 ></hr>
               ) : (
-                ""
+                "Travel"
               )}
             </span>
           </li>

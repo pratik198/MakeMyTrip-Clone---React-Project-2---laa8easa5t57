@@ -35,7 +35,6 @@ const Router = () => {
         <Route path="/hoteldatapage" element={<HotelDataPage />} />
         <Route path="/traindatapage" element={<TrainDataPage />} />
         <Route path="/busdatapage" element={<BusDataPage />} />
-        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/login" component={<Login />} />
         <Route path="/hoteldetaildatapage" element={<HotelDetailDataPage />} />
         <Route element={<PrivateRouter />}>

@@ -419,7 +419,7 @@ function BusDataPage() {
                           </p>
                         </div>
                       </div>
-                      <div className="flex justify-around  w-[650px]">
+                      <div className="flex justify-around  ">
                         <div className="w-[250px] h-[450px] mt-5 flex border border-solid border-[lightgray] rounded-[10px] mb-[20px]">
                           <div className="w-[100%] gap-2 flex flex-col items-center">
                             <div
