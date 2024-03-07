@@ -15,9 +15,7 @@ function BookingPageFlight() {
   } = useAuth();
   const [flightBookingData, setFlightBookingDetailData] = useState([]);
   const navigate = useNavigate();
-  const taxes = useMemo(() => Math.floor(Math.random() * 1000) + 1, []); // Memoized taxes calculation
-
-  // State for input values
+  const taxes = useMemo(() => Math.floor(Math.random() * 1000) + 1, []);
   const [mobileNo, setMobileNo] = useState("");
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -286,6 +284,7 @@ function BookingPageFlight() {
                 <h3>Rs {flightBookingData.ticketPrice + taxes}</h3>
               </div>
             </div>
+
             <button
               onClick={() =>
                 handleBookingContinue(

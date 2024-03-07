@@ -7,7 +7,7 @@ function Login({ onClose }) {
   const [password, setPassword] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
   const [signUpModalOpen, setSignUpModalOpen] = useState(false);
-
+  const [errorMessage, setErrorMessage] = useState("");
   const handleModalOpen = () => {
     onClose(!modalOpen);
   };
@@ -47,6 +47,8 @@ function Login({ onClose }) {
         onClose(!modalOpen);
       } else {
         console.error("Login failed!");
+        const errorData = await response.json();
+        setErrorMessage(errorData.message);
       }
     } catch (error) {
       console.error("Error during login:", error);
@@ -89,6 +91,12 @@ function Login({ onClose }) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            {errorMessage && (
+              <p style={{ color: "red", position: "relative", bottom: "42%" }}>
+                {/* {errorMessage} */}
+                Login failed please check your Email id and password
+              </p>
+            )}
           </div>
           <button onClick={handleLogin} className="Login_comp_btn">
             Login

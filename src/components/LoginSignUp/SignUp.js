@@ -6,6 +6,7 @@ function SignUp({ onClose }) {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleModalOpen = async () => {
     const projectid = "laa8easa5t57";
@@ -26,15 +27,17 @@ function SignUp({ onClose }) {
           }),
         }
       );
+      const data = await response.json();
       if (response.ok) {
         console.log("Signup successful!");
+        onClose(); // Close modal only if signup is successful
       } else {
         console.error("Signup failed!");
+        setErrorMessage(data.message);
       }
     } catch (error) {
       console.error("Error during signup:", error);
     }
-    onClose();
   };
 
   const handleChildClick = (event) => {
@@ -55,6 +58,11 @@ function SignUp({ onClose }) {
           <div className="SignUp_child_SignUp">
             <button className="SignUp_child_SignUp_lgnbtn">SignUp</button>
           </div>
+          {errorMessage && (
+            <p style={{ color: "red", position: "relative", top: "10px" }}>
+              {errorMessage}
+            </p>
+          )}
           <div className="SignUp_child_SignUpdetail_div_fn_ln">
             <div style={{ display: "flex", flexDirection: "column" }}>
               <label>First Name</label>
