@@ -16,7 +16,9 @@ const HotelSearchComponent = () => {
   const [flightToOpen, setFlightToOpen] = useState(false);
   const { hotelCity, hotelRoomNo, hotelAdultNo } = useAuth();
   const [isHotelGuestOpen, setIsHotelGuestOpen] = useState(false);
-  const [startDate, setStartDate] = useState(new Date()); // Initialize with current date
+  const [startDate, setStartDate] = useState(new Date());
+  const [checkInDate, setCheckInDate] = useState(new Date());
+  const [checkOutDate, setCheckOutDate] = useState(new Date());
   const navigate = useNavigate();
 
   const handleFlightCityInput = () => {
@@ -64,21 +66,20 @@ const HotelSearchComponent = () => {
             <div className="HotelSearchComponenet_Child_ToInput">
               <span>Check-In</span>
               <DatePicker
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-                dateFormat="dd MMM yy" // Set the desired format
+                selected={checkInDate}
+                onChange={(date) => setCheckInDate(date)}
+                dateFormat="dd MMM yy"
                 className="date-picker"
-                // Add custom class for styling
               />
             </div>
             <div className="HotelSearchComponenet_Child_Departure">
               <span>Check-Out</span>
-              {/* Add another DatePicker for Check-Out, similar to Check-In */}
+
               <DatePicker
-                selected={startDate} // For example, use the same date
-                onChange={(date) => setStartDate(date)}
-                dateFormat="dd MMM yy" // Set the desired format
-                className="date-picker" // Add custom class for styling
+                selected={checkOutDate}
+                onChange={(date) => setCheckOutDate(date)}
+                dateFormat="dd MMM yy"
+                className="date-picker"
               />
             </div>
             <div

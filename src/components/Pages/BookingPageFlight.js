@@ -268,8 +268,8 @@ function BookingPageFlight() {
                   paddingTop: "15px",
                 }}
               >
-                <h4>Taxes and Surcharges</h4>
-                <p>Rs {taxes}</p>
+                {/* <h4>Taxes and Surcharges</h4> */}
+                {/* <p>Rs {taxes}</p> */}
               </div>
               <div
                 style={{
@@ -281,7 +281,7 @@ function BookingPageFlight() {
                 }}
               >
                 <h2>Total Amount</h2>
-                <h3>Rs {flightBookingData.ticketPrice + taxes}</h3>
+                <h3>Rs {flightBookingData.ticketPrice}</h3>
               </div>
             </div>
 

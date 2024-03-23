@@ -7,7 +7,7 @@ const Offers = () => {
   const [selectedOfferType, setSelectedOfferType] = useState("ALL");
   const [loading, setLoading] = useState(true);
   const [startIndex, setStartIndex] = useState(0);
-  const offersPerPage = 6; // Number of offers to display per page
+  const offersPerPage = 6;
 
   useEffect(() => {
     const fetchOffers = async () => {
@@ -37,7 +37,7 @@ const Offers = () => {
 
   const handleOfferTypeChange = (type) => {
     setSelectedOfferType(type);
-    setStartIndex(0); // Reset startIndex when offer type changes
+    setStartIndex(0);
   };
 
   // const handleNext = () => {

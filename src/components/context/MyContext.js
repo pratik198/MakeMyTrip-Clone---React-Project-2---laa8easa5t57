@@ -26,8 +26,13 @@ export function AuthProvider({ children }) {
   // const [travelDay, setTravelDay] = useState("");
   const [flightData, setFlightData] = useState([]);
   const [flightId, setFlightId] = useState("");
-  const [hotelCheckin, setHotelCheckin] = useState("");
-  const [hotelCheckOut, setHotelCheckOut] = useState("");
+  const [hotelCheckin, setHotelCheckin] = useState(new Date());
+  // const [hotelCheckOut, setHotelCheckOut] = useState(new Date());
+  const [hotelCheckOut, setHotelCheckOut] = useState(() => {
+    const nextDay = new Date(hotelCheckin);
+    nextDay.setDate(hotelCheckin.getDate() + 1);
+    return nextDay;
+  });
   const [busFromInput, setBusFromInput] = useState(["Mumbai"]);
   const [busToInput, setBusToInput] = useState(["Delhi"]);
   const [hotelDetaiId, setHotelDetailId] = useState("");

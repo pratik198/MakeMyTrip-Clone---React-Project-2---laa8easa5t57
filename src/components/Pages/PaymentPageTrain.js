@@ -9,6 +9,7 @@ function PaymentPage() {
   const { fare, bookingId, bookingType } = useAuth();
   const token = localStorage.getItem("jwtToken");
   const [showSuccessfull, setShowSuccessfull] = useState(false);
+
   const taxes = Math.floor(Math.random() * 1000) + 1;
 
   const handleOptionClick = (option) => {
@@ -254,7 +255,7 @@ function PaymentPage() {
           >
             <div>
               <h5 style={{ color: "gray" }}>Fare</h5>
-              <h5 style={{ color: "gray", marginTop: "10px" }}>OTHERS</h5>
+              {/* <h5 style={{ color: "gray", marginTop: "10px" }}>OTHERS</h5> */}
             </div>
             <div>
               <h5>&#8377; {fare}</h5>
@@ -275,7 +276,7 @@ function PaymentPage() {
               <small>Convenience fee added</small>
             </div>
             <div>
-              <h3>&#8377; {fare + taxes}</h3>
+              <h3>&#8377; {fare}</h3>
             </div>
           </div>
         </div>

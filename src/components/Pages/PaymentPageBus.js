@@ -274,9 +274,7 @@ function PaymentPage() {
               <h2>Total Due</h2>
               <small>Convenience fee added</small>
             </div>
-            <div>
-              <h3>&#8377; {fare + taxes}</h3>
-            </div>
+            <div>{/* <h3>&#8377; {fare + taxes}</h3> */}</div>
           </div>
         </div>
       </div>

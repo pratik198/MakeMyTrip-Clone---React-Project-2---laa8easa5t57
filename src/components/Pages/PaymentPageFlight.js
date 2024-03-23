@@ -266,7 +266,7 @@ function PaymentPage() {
             </div>
             <div>
               <h5>&#8377; {fare}</h5>
-              <h5 style={{ marginTop: "10px" }}>&#8377; 659</h5>
+              {/* <h5 style={{ marginTop: "10px" }}>&#8377; 659</h5> */}
             </div>
           </div>
           <div
@@ -283,7 +283,7 @@ function PaymentPage() {
               <small>Convenience fee added</small>
             </div>
             <div>
-              <h3>&#8377; {fare + taxes}</h3>
+              <h3>&#8377; {fare}</h3>
             </div>
           </div>
         </div>
