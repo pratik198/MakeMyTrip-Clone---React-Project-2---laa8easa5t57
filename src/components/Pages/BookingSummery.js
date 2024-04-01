@@ -1,39 +1,50 @@
 import React, { useEffect, useState } from "react";
 import "./BookingSummery.css";
 import SecondaryNav2 from "../NavigationBar/SecondaryNavigation/SecondaryNav2";
-import { ButtonGroup } from "@mui/material";
 
 function BookingSummery() {
-  const [bookingData, setBookingdata] = useState([]);
-  const [isData, setIsdata] = useState(false);
+  const [bookingData, setBookingData] = useState([]);
+  const [isData, setIsData] = useState(false);
+  const [bookingType, setBookingType] = useState(null);
 
   useEffect(() => {
-    const fetchBookingdata = () => {
+    const fetchBookingData = async () => {
       const api =
         "https://academics.newtonschool.co/api/v1/bookingportals/booking";
       const token = localStorage.getItem("jwtToken");
       const productid = "laa8easa5t57";
-      fetch(api, {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          projectID: productid,
-        },
-      })
-        .then((response) => {
-          if (response.ok) {
-            const data = response.json();
-            setIsdata(true);
-            return data;
-          }
-        })
-        .then((data) => {
-          setBookingdata(data.data);
-          console.log(data.data);
+      try {
+        const response = await fetch(api, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            projectID: productid,
+          },
         });
+        if (response.ok) {
+          const data = await response.json();
+          setBookingData(data.data);
+          setIsData(true);
+        }
+      } catch (error) {
+        console.error("Error fetching booking data:", error);
+      }
     };
-    fetchBookingdata();
+
+    fetchBookingData();
   }, []);
+
+  const handleType = (type) => {
+    if (bookingType === type) {
+      setBookingType(null);
+    } else {
+      setBookingType(type);
+    }
+  };
+
+  const filteredData = bookingType
+    ? bookingData.filter((booking) => booking.booking_type === bookingType)
+    : bookingData;
 
   return (
     <div className="BookingSummery_ParentDiv">
@@ -41,6 +52,12 @@ function BookingSummery() {
       <div className="BookingSummeryChild">
         <div className="BookingSummeryChild_dataDiv">
           <div className="BookingSummeryChild_dataDiv_Bookings">
+            <div>
+              <button onClick={() => handleType("flight")}>Flight</button>
+              <button onClick={() => handleType("hotel")}>Hotel</button>
+              <button onClick={() => handleType("bus")}>Bus</button>
+              <button onClick={() => handleType("train")}>Train</button>
+            </div>
             <div className="BookingSummeryChild_dataDiv_Bookings_imgDiv">
               <img
                 className="BookingSummeryChild_dataDiv_Bookings_img"
@@ -52,62 +69,68 @@ function BookingSummery() {
           </div>
           <div className="BookingSummeryChild_dataDiv_NoBookings">
             {isData ? (
-              bookingData.map((bookingdetail, id) => (
-                <div
-                  key={id}
-                  className="BookingSummeryChild_dataDiv_Bookingsdata"
-                >
-                  <div className="BookingSummeryChild_dataDiv_Bookingsdata_left">
+              filteredData.length > 0 ? (
+                filteredData.map((bookingDetail, id) => (
+                  <div
+                    key={id}
+                    className="BookingSummeryChild_dataDiv_Bookingsdata"
+                  >
+                    <div className="BookingSummeryChild_dataDiv_Bookingsdata_left">
+                      <h4>
+                        Booking Type :{" "}
+                        <span style={{ fontSize: "14px" }}>
+                          {bookingDetail.booking_type}
+                        </span>
+                      </h4>
+                      <small>{bookingDetail.user.name} was Travelling</small>
+                      {bookingDetail.hotel && (
+                        <h4>{bookingDetail.hotel.name}</h4>
+                      )}
+                      <h4 style={{ marginTop: "20px" }}>
+                        Booking Status :{" "}
+                        <span
+                          style={{
+                            fontSize: "14px",
+                            color: "white",
+                            backgroundColor: "green",
+                          }}
+                        >
+                          Confirmed
+                        </span>
+                      </h4>
+                    </div>
                     <h4>
-                      Booking Type :{" "}
+                      Trip Id :{" "}
                       <span style={{ fontSize: "14px" }}>
-                        {bookingdetail.booking_type}
-                      </span>
-                    </h4>
-                    <small>{bookingdetail.user.name} was Travelling</small>
-                    <h4>{bookingdetail?.hotel?.name}</h4>
-                    <h4 style={{ marginTop: "20px" }}>
-                      Booking Status :{" "}
-                      <span
-                        style={{
-                          fontSize: "14px",
-                          color: "white",
-                          backgroundColor: "green",
-                        }}
-                      >
-                        Confirmed
+                        {bookingDetail._id}
                       </span>
                     </h4>
                   </div>
-                  <h4>
-                    Trip Id :{" "}
-                    <span style={{ fontSize: "14px" }}>
-                      {bookingdetail._id}
-                    </span>
-                  </h4>
+                ))
+              ) : (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    width: "100%",
+                    height: "310px",
+                    justifyContent: "center",
+                  }}
+                >
+                  <img
+                    src="https://imgak.mmtcdn.com/mima/images/Desktop/upcoming-empty.png"
+                    alt="Empty"
+                  />
+                  <div>
+                    <h3>Looks empty, you've no upcoming bookings.</h3>
+                    <small>
+                      When you book a trip, you will see your itinerary here.
+                    </small>
+                  </div>
                 </div>
-              ))
+              )
             ) : (
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  width: "100%",
-                  height: "310px",
-                  justifyContent: "center",
-                }}
-              >
-                <img
-                  src="https://imgak.mmtcdn.com/mima/images/Desktop/upcoming-empty.png"
-                  alt="Empty"
-                />
-                <div>
-                  <h3>Looks empty, you've no upcoming bookings.</h3>
-                  <small>
-                    When you book a trip, you will see your itinerary here.
-                  </small>
-                </div>
-              </div>
+              <p>Loading...</p>
             )}
           </div>
         </div>

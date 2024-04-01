@@ -38,6 +38,7 @@ const DatePickerComponent = () => {
       selected={isSelectedDayCheckOut}
       onChange={(date) => setSelectedDayCheckOut(date)}
       customInput={<CustomInput />}
+      minDate={new Date()}
     />
   );
 };
