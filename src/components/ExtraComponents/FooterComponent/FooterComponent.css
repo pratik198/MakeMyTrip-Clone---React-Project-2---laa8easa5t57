@@ -54,9 +54,7 @@ strong {
 
 @media only screen and (max-width: 600px) {
   .section_1 img {
-    cursor: pointer;
-    border-radius: 28px;
-    width: 83%;
+    display: none;
   }
 }
 /* new */
