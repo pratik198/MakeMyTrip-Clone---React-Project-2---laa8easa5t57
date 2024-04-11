@@ -149,7 +149,10 @@ function BusDataPage() {
         <div className="BusDataPage_Data_Left_Div">
           <div className="BusDataPage_Data_Left_Pickup">
             <h3>Pick Up time - Delhi</h3>
-            <div style={{ display: "flex", gap: "10px" }}>
+            <div
+              className="pickuptime_daily"
+              style={{ display: "flex", gap: "10px" }}
+            >
               <div
                 style={{
                   width: "138px",
@@ -194,7 +197,10 @@ function BusDataPage() {
                 <p style={{ fontSize: "12px" }}>11 Am to 6pm</p>
               </div>
             </div>
-            <div style={{ display: "flex", gap: "10px" }}>
+            <div
+              className="pickuptime_daily"
+              style={{ display: "flex", gap: "10px" }}
+            >
               <div
                 style={{
                   width: "138px",
@@ -243,7 +249,10 @@ function BusDataPage() {
           </div>
           <div className="BusDataPage_Data_Left_Pickup">
             <h3>Drop Point - Delhi</h3>
-            <div style={{ display: "flex", gap: "10px" }}>
+            <div
+              className="pickuptime_daily"
+              style={{ display: "flex", gap: "10px" }}
+            >
               <div
                 style={{
                   width: "138px",
@@ -288,7 +297,10 @@ function BusDataPage() {
                 <p style={{ fontSize: "12px" }}>11 Am to 6pm</p>
               </div>
             </div>
-            <div style={{ display: "flex", gap: "10px" }}>
+            <div
+              className="pickuptime_daily"
+              style={{ display: "flex", gap: "10px" }}
+            >
               <div
                 style={{
                   width: "138px",
@@ -377,7 +389,7 @@ function BusDataPage() {
               </div>
               {open[businfo._id] && (
                 <div className="modalSeatSection">
-                  <div className="w-[98%] h-[98%] flex justify-between ">
+                  <div className="w-[98%] h-[98%] flex justify-between  seat___section ">
                     <div
                       className="closeBtnBusSeats"
                       onClick={handleBusDetailClose}
@@ -594,7 +606,7 @@ function BusDataPage() {
                         </div>
                       </div>
                     </div>
-                    <div className="w-[400px] border border-solid border-[lightgray] rounded-[10px] flex flex-col items-center m-2 ">
+                    <div className="w-[400px] border border-solid border-[lightgray] rounded-[10px] flex flex-col items-center m-2 price___sectionnnnn">
                       <div className="w-[95%] text-[15px] text-[#000] mt-[50px]">
                         <p>Boarding Point</p>
                       </div>

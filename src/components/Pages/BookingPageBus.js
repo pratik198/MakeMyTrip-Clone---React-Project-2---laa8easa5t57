@@ -75,7 +75,9 @@ function BookingPageBus() {
       <SecondaryNav2 />
       <div className="BookingPageBus_Child">
         <div style={{ width: "1200px", marginTop: "20px" }}>
-          <h3 style={{ color: "white" }}>Complete Your Booking</h3>
+          <h3 className="complete__booking_ssection" style={{ color: "white" }}>
+            Complete Your Booking
+          </h3>
         </div>
         <div className="BookingPageBus_Child_data">
           <div className="BookingPageBus_Child_data_left">
@@ -204,7 +206,10 @@ function BookingPageBus() {
                       onChange={(e) => setFirstName(e.target.value)}
                     />
                   </div>
-                  <div style={{ display: "flex", flexDirection: "column" }}>
+                  <div
+                    className="right_side_ssectionnnn"
+                    style={{ display: "flex", flexDirection: "column" }}
+                  >
                     <label>Last Name</label>
                     <input
                       type="text"

@@ -67,7 +67,10 @@ function BookingPageHotel() {
     <div className="BookingPageHotel_parent">
       <SecondaryNav2 />
       <div className="BookingPageHotel_Child">
-        <div style={{ width: "1200px", marginTop: "20px" }}>
+        <div
+          className="booking__page__hotel"
+          style={{ width: "1200px", marginTop: "20px" }}
+        >
           <h3 style={{ color: "white" }}>Complete Your Booking</h3>
         </div>
         <div className="BookingPageHotel_Child_data">

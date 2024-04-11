@@ -74,7 +74,10 @@ function BookingPageTrain() {
     <div className="BookingPageTrain_parent">
       <SecondaryNav2 />
       <div className="BookingPageTrain_Child">
-        <div style={{ width: "1200px", marginTop: "20px" }}>
+        <div
+          className="heading_____booking"
+          style={{ width: "1200px", marginTop: "20px" }}
+        >
           <h3 style={{ color: "white" }}>Complete Your Booking</h3>
         </div>
         <div className="BookingPageTrain_Child_data">
@@ -190,6 +193,7 @@ function BookingPageTrain() {
               <h3>Add Traveller Details</h3>
               <div className="BookingPageTrain_Child_data_left_data2_traveller_Detail">
                 <div
+                  className="lastname______"
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
@@ -204,7 +208,11 @@ function BookingPageTrain() {
                       onChange={(e) => setFirstName(e.target.value)}
                     />
                   </div>
-                  <div style={{ display: "flex", flexDirection: "column" }}>
+
+                  <div
+                    className="lastname______"
+                    style={{ display: "flex", flexDirection: "column" }}
+                  >
                     <label>Last Name</label>
                     <input
                       type="text"

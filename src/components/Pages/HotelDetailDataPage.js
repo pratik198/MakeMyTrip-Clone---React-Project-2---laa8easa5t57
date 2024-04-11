@@ -250,7 +250,9 @@ function HotelDetailDataPage() {
               </div>
             </div>
             <div className="HotelDataPage_search_div_Child_data_child3_data2">
-              <h3 style={{ fontSize: "25px" }}>Rating</h3>
+              <h3 className="rating__hotel_" style={{ fontSize: "25px" }}>
+                Rating
+              </h3>
               <h3 style={{ fontSize: "20px" }}>{hotelData?.rating}</h3>
               <p>Based on {Math.floor(Math.random() * 7000) + 1} Ratings</p>
             </div>
