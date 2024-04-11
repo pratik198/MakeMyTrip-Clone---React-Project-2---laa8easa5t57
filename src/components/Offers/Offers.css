@@ -158,3 +158,37 @@
   display: flex;
   transition: transform 0.3s ease-in-out;
 }
+
+@media only screen and (max-width: 600px) {
+  .Offers_Child {
+    max-width: 91%;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+    top: 82px;
+  }
+  .Offers_Navigation_filter {
+    display: flex;
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .Offers_Navigation_filter ul li {
+    list-style-type: none;
+    margin-top: 0;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .Offers_Navigation_filter h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 0;
+  }
+  .next_prev {
+    position: absolute;
+    display: flex;
+    left: 87%;
+    gap: 5px;
+    top: 6px;
+  }
+}

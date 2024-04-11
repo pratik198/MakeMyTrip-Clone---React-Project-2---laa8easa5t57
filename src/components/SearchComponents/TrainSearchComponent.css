@@ -131,3 +131,84 @@
   position: relative;
   left: -380px;
 }
+
+@media only screen and (max-width: 600px) {
+  .TrainSearchComponenet_Parent {
+    /* background-image: url(http://localhost:3000/static/media/LandingBackground.125f9d4….png); */
+    height: 580px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: none;
+  }
+  .TrainSearchComponenet_Child {
+    width: 100%;
+    height: 280px;
+    background-color: white;
+    border-radius: 8px;
+    position: relative;
+    top: -50px;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .TrainlightSearchComponent_Child_radio {
+    width: 100%;
+    height: 21px;
+    margin-top: 60px;
+    text-align: center;
+  }
+  .TrainSearchComponenet_Child_Input_detail {
+    /* display: flex; */
+    margin-top: 20px;
+    width: 100%;
+    flex-direction: column;
+    /* height: 223px; */
+  }
+  .TrainSearchComponenet_Child_Destination_Input {
+    width: 100%;
+    height: 114px;
+    display: flex;
+    flex-direction: column;
+  }
+  .TrainSearchComponenet_Child_FromInput {
+    border: 1px solid lightgray;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: none;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+    height: 112px;
+  }
+  .TrainSearchComponenet_Child_ToInput {
+    border: 1px solid lightgray;
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    height: 112px;
+  }
+  .TrainSearchComponenet_Child_Departure {
+    border: 1px solid lightgray;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 100%;
+    height: 112px;
+  }
+  .TrainToInput {
+    position: relative;
+    left: 0;
+    bottom: 56px;
+  }
+}

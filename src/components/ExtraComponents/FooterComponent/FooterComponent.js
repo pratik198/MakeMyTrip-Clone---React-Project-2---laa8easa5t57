@@ -127,7 +127,7 @@ function FooterComponent() {
         </p>
       </div>
       <div> */}
-      <div>
+      <div className="footer___text">
         <p className="text-[13px]">
           <strong>PRODUCT OFFERING </strong> <br /> <br />
           Flights, International Flights, Charter Flights, Hotels, International
@@ -254,7 +254,7 @@ function FooterComponent() {
             </a>
           </div>
 
-          <h5>
+          <h5 className="footer___ttext">
             © 2023 MAKEMYTRIP PVT. LTD. <br />
             &#10240;&#10240;&#10240;&#10240;&#10240;&#10240;Country India USA
             UAE

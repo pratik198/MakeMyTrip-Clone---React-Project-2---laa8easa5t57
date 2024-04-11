@@ -57,5 +57,13 @@ strong {
   .section_1 img {
     display: none;
   }
+  .footer___text {
+    position: relative;
+    right: 43px;
+    top: 41px;
+  }
+  .footer___ttext {
+    display: none;
+  }
 }
 /* new */

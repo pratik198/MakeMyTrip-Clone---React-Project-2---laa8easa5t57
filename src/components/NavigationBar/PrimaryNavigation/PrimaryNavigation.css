@@ -42,3 +42,20 @@
 .MakeMyTripBag_details-p2 {
   font-size: 10px;
 }
+
+@media screen and (max-width: 600px) {
+  .img__header_center {
+    display: none;
+  }
+  .PrimaryNavigation__parent {
+    display: flex;
+    justify-content: space-between;
+    height: 47px;
+    padding: 5px;
+    margin-top: 5px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+}

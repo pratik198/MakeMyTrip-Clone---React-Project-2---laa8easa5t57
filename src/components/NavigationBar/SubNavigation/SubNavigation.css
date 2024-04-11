@@ -128,3 +128,15 @@
   margin-left: -218px;
   margin-top: -80px;
 }
+
+@media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 600px) {
+  .SubNavigation_child_div {
+    width: 96%;
+  }
+  .clickable_1 {
+    display: none !important;
+  }
+}

@@ -38,7 +38,12 @@ const PrimaryNavigation = () => {
         alt="MakeMyTripLogo"
       />
       <div className="MakeMyTripBag_Button_div">
-        <img style={{ height: "43px" }} src={PrimaryNagivigation} alt=",," />
+        <img
+          className="img__header_center"
+          style={{ height: "43px" }}
+          src={PrimaryNagivigation}
+          alt=",,"
+        />
         <img className="MyTripBag" src={MyTripBag} alt="MyTripBag" />
         <div
           onClick={handleopenBookinSummery}

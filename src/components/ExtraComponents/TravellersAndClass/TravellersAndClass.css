@@ -1,64 +1,110 @@
-.TravellersAndClass_parent_container{
-    position: absolute;
-    width: 680px;
-    height: 337px;
-    background-color: white;
-    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
-    left: 450px;
-    bottom: -200px;
-    z-index: 1;
-    border-radius: 4px;
-    padding: 40px 30px 20px 30px;
+.TravellersAndClass_parent_container {
+  position: absolute;
+  width: 680px;
+  height: 337px;
+  background-color: white;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
+  left: 450px;
+  bottom: -200px;
+  z-index: 1;
+  border-radius: 4px;
+  padding: 40px 30px 20px 30px;
 }
 
-.TravellersAndClass_child_container_1{
-    width: 600px;
-    height: 71px;
+.TravellersAndClass_child_container_1 {
+  width: 600px;
+  height: 71px;
 }
-.TravellersAndClass_child_container_1 ul{
+.TravellersAndClass_child_container_1 ul {
+  display: flex;
+  margin-top: 10px;
+}
+.TravellersAndClass_p1 {
+  font-size: 14px;
+}
+.TravellersAndClass_p2 {
+  font-size: 12px;
+}
+.TravellersAndClass_child_container_1 ul li {
+  list-style: none;
+  width: 36px;
+  height: 32px;
+  border: 1px solid lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.TravellersAndClass_child_container_2 {
+  display: flex;
+  width: 600px;
+  height: 71px;
+  margin-top: 50px;
+  gap: 30px;
+}
+.TravellersAndClass_child_container_2 ul {
+  display: flex;
+  margin-top: 10px;
+}
+.TravellersAndClass_child_container_2 ul li {
+  list-style: none;
+  width: 36px;
+  height: 32px;
+  border: 1px solid lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.TravellersAndClass_button {
+  width: 88px;
+  height: 32px;
+  border-radius: 34px;
+  background-image: linear-gradient(96deg, #53b2fe, #065af3);
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border: none;
+  color: white;
+  position: relative;
+  top: 50px;
+  left: 500px;
+  cursor: pointer;
+}
+.active {
+  background-color: #53b2fe;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .TravellersAndClass_parent_container {
+    position: absolute;
+    width: 100%;
+    height: 308px;
+    background-color: white;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
+    left: 0;
+    bottom: -200px;
+    z-index: 3;
+    border-radius: 4px;
+    /* padding: 40px 30px 20px 30px; */
+    padding: 16px;
+    padding-right: 5px;
+  }
+  .TravellersAndClass_child_container_1 {
+    width: 100%;
+    height: 36px;
+  }
+  .TravellersAndClass_child_container_2 {
     display: flex;
-    margin-top: 10px;
-}
-.TravellersAndClass_p1{
-    font-size: 14px;
-}
-.TravellersAndClass_p2{
-    font-size: 12px;
-}
-.TravellersAndClass_child_container_1 ul li{
-    list-style: none;
-    width: 36px;
-    height: 32px;
-    border: 1px solid lightgray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
-    cursor: pointer;
-}
-.TravellersAndClass_child_container_2{
-    display: flex;
-    width: 600px;
+    width: 100%;
     height: 71px;
     margin-top: 50px;
     gap: 30px;
-}
-.TravellersAndClass_child_container_2 ul{
-    display: flex;
-    margin-top: 10px;
-}
-.TravellersAndClass_child_container_2 ul li{
-    list-style: none;
-    width: 36px;
-    height: 32px;
-    border: 1px solid lightgray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
-    cursor: pointer;
-}
-.TravellersAndClass_button{
+    flex-direction: column;
+  }
+  .TravellersAndClass_button {
     width: 88px;
     height: 32px;
     border-radius: 34px;
@@ -68,11 +114,8 @@
     border: none;
     color: white;
     position: relative;
-    top: 50px;
-    left: 500px;
+    top: 71px;
+    left: 333px;
     cursor: pointer;
-}
-.active{
-    background-color: #53b2fe;
-    color: white;
+  }
 }

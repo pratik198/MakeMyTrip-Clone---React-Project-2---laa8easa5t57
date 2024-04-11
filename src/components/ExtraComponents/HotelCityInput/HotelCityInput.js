@@ -74,6 +74,7 @@ const HotelInput = ({ onClose }) => {
       style={{
         boxShadow: "0px 4px 12px 1px rgba(0, 0, 0, 0.42)",
         backgroundColor: "white",
+        zIndex: "1",
       }}
     >
       <input

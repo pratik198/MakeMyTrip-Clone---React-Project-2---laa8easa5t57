@@ -91,7 +91,32 @@
   cursor: pointer;
   border: none;
 }
-.SecondaryNvigation__Navigation_Container span{
-    font-size: 14px;
-    margin-left: 5px;
+.SecondaryNvigation__Navigation_Container span {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .SecondaryNvigation__Navigation_Container {
+    display: flex;
+    /* border: 1px solid red; */
+    /* width: 902px; */
+    height: 80px;
+    align-items: center;
+    margin-left: 20px;
+  }
+  .SecondaryNvigation__Child_Container {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* border: 1px solid black; */
+  }
+  .SecondaryNvigation__Navigation_Container ul {
+    margin-left: -2px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+  }
 }

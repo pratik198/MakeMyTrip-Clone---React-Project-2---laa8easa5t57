@@ -4,7 +4,7 @@ import moment from "moment";
 import React, { useEffect } from "react";
 import { useAuth } from "../../context/MyContext";
 import { useState } from "react";
-
+import "./DatePicket.css";
 const DatePickerComponent = () => {
   const [isSelectedDayCheckOut, setSelectedDayCheckOut] = useState(new Date());
   const { setTravelDay } = useAuth();
