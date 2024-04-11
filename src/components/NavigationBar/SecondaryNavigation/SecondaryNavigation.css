@@ -116,7 +116,7 @@
   .SecondaryNvigation__Navigation_Container ul {
     margin-left: -2px;
     display: flex;
-    gap: 20px;
+    gap: 2px;
     justify-content: space-around;
   }
 }

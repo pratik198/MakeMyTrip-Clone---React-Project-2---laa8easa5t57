@@ -72,8 +72,13 @@ function BookingPageFlight() {
     <div className="BookingPageFlight_parent">
       <SecondaryNav2 />
       <div className="BookingPageFlight_Child">
-        <div style={{ width: "1200px", marginTop: "20px" }}>
-          <h3 style={{ color: "white" }}>Complete Your Booking</h3>
+        <div className="combg" style={{ width: "1200px", marginTop: "20px" }}>
+          <h3
+            className="completeurbooking"
+            style={{ color: "white", width: "100%" }}
+          >
+            Complete Your Booking
+          </h3>
         </div>
         <div className="BookingPageFlight_Child_data">
           <div className="BookingPageFlight_Child_data_left">
@@ -193,6 +198,7 @@ function BookingPageFlight() {
               <h3>Add Traveller Details</h3>
               <div className="BookingPageFlight_Child_data_left_data2_traveller_Detail">
                 <div
+                  className="unknowwwwwww"
                   style={{
                     display: "flex",
                     justifyContent: "space-between",

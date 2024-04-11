@@ -405,7 +405,10 @@ function FlightDataPage() {
             </div>
           </div>
           <div className="FlightDataPage_data_div">
-            <h3 style={{ fontSize: "25px", marginLeft: "10px" }}>
+            <h3
+              className="fd_h"
+              style={{ fontSize: "25px", marginLeft: "10px" }}
+            >
               Flights From {AirportFrom[0]} to {AirportTo[0]}
             </h3>
             {searchResults &&
@@ -462,7 +465,7 @@ function FlightDataPage() {
                       <div className="h-[100%] w-[20%] flex justify-center items-center">
                         <p
                           onClick={() => handleFlightBookNow(flightApidata._id)}
-                          className="bg-[#53b2fe] rounded-[40px] text-[14px] text-[#fff] w-[90%] h-[40%] flex justify-center items-center cursor-pointer"
+                          className="bg-[#53b2fe] rounded-[40px] text-[14px] text-[#fff] w-[90%] h-[40%] flex justify-center items-center cursor-pointer text-center"
                         >
                           Book Now
                         </p>

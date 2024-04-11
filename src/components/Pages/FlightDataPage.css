@@ -111,16 +111,76 @@
   flex-direction: column;
   align-items: center;
 }
-/* .flight_img_img {
-  height: 189px;
-  width: 100%;
-  background: linear-gradient(180deg, #0e263c, #0c2540) !important;
-  position: absolute;
-  left: 0;
-  z-index: -1;
-} */
-/* @media only screen and (max-width: 600px) {
-  .FlightDataPage_Parent_Div {
-    width: 307%;
+
+@media only screen and (max-width: 600px) {
+  .FlightDataPage_SearchBar {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
   }
-} */
+  .FlightDataPage_Child_Div_Button {
+    margin-left: 0;
+    border-radius: 34px;
+    background-image: var(
+      --color-btn-primary-bg,
+      linear-gradient(93deg, #53b2fe, #065af3)
+    );
+    box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.2);
+    color: white;
+    border: none;
+    width: 176px;
+    height: 45px;
+    cursor: pointer;
+  }
+
+  .fd_h {
+    font-size: 25px;
+    margin-left: 10px;
+    width: 100%;
+  }
+  .FlightDataPage_FilterAndData_div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .FlightDataPage_SearchBar_From_div,
+  .FlightDataPage_SearchBar_To_div,
+  .FlightDataPage_SearchBar_Depart_div,
+  .FlightDataPage_SearchBar_Passenger_div {
+    width: 160px;
+    height: 48px;
+    margin-left: 0;
+    color: #008cff;
+    font-size: 12px;
+    padding: 5px;
+    background: hsla(0, 0%, 100%, 0.1);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .FlightDataPage_Filter_div {
+    margin-top: 20px;
+    width: 100%;
+    height: 750px;
+    padding: 15px;
+    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.1);
+    /* position: sticky; */
+    top: 143px;
+    position: absolute;
+    left: 0;
+  }
+  .FlightDataPage_data_div {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+    position: relative;
+    top: 46em;
+  }
+  .FlightDataPage_data {
+    margin-top: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 94%;
+  }
+}

@@ -274,7 +274,7 @@ function HotelDetailDataPage() {
         <div className="w-[100%]  h-[100%] flex flex-col">
           {hotelData.rooms?.map((room, index) => (
             <div
-              className=" border border-solid border-[lightgray] rounded-[10px] mt-2 w-[100%] h-[40vh] flex"
+              className=" border border-solid border-[lightgray] rounded-[10px] mt-2 w-[100%] h-[40vh] flex rooms____"
               key={index}
             >
               <div className="border border-solid border-[lightgray] rounded-l-[10px] h-[100%] w-[700px] flex justify-center items-center">

@@ -93,7 +93,9 @@ const PrimaryNavigation = () => {
               }}
               onClick={handleLogout}
             >
-              Hi {localStorage.getItem("name")}
+              <span className="nameeeeee">
+                Hi {localStorage.getItem("name")}
+              </span>
             </p>
           </div>
         )}

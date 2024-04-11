@@ -58,4 +58,19 @@
     right: 0;
     width: 100%;
   }
+  .nameeeeee {
+    color: black;
+  }
+  .MakeMyTripBag_details {
+    margin-right: 20px;
+    margin-top: 0;
+    cursor: pointer;
+    color: black;
+    font-weight: 700;
+  }
+  .LoginSignUpButton {
+    cursor: pointer;
+    width: 162px;
+    height: 42px;
+  }
 }
