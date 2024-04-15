@@ -11,7 +11,7 @@ const CommingSoonSearch = () => {
       <ParentHeader />
       <SubNavigation />
       <div className="CoomingSoonSearchComponenet_Child">
-        <h1>CommingSoon....</h1>
+        <h1>Coming Soon....</h1>
       </div>
     </div>
   );

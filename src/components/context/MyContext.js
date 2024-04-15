@@ -16,7 +16,7 @@ export function AuthProvider({ children }) {
     "Goa International Airport",
     "LKO",
   ]);
-  const [travellersCount, setTravellersCount] = useState(0);
+  const [travellersCount, setTravellersCount] = useState(1);
   const [travelDay, setTravelDay] = useState(new Date());
   const [hotelCity, setHotelCity] = useState(["Mumbai"]);
   const [trainJunctionFrom, setTrainJunctionFrom] = useState(["Surat"]);

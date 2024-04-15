@@ -10,6 +10,10 @@ function SignUp({ onClose }) {
 
   const handleModalOpen = async () => {
     const projectid = "laa8easa5t57";
+    if (!firstName || !lastName || !email || !password) {
+      setErrorMessage("All fields are required");
+      return;
+    }
     try {
       const response = await fetch(
         "https://academics.newtonschool.co/api/v1/bookingportals/signup",

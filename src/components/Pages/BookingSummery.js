@@ -86,25 +86,28 @@ function BookingSummery() {
                       {bookingDetail.hotel && (
                         <h4>{bookingDetail.hotel.name}</h4>
                       )}
-                      <h4 style={{ marginTop: "20px" }}>
+                      <p style={{ marginTop: "20px" }}>
                         Booking Status :{" "}
                         <span
                           style={{
-                            fontSize: "14px",
+                            // fontSize: "14px",
                             color: "white",
                             backgroundColor: "green",
                           }}
                         >
                           Confirmed
                         </span>
-                      </h4>
+                      </p>
                     </div>
-                    <h4>
+                    <p className="h444____dask">
                       Trip Id :{" "}
-                      <span style={{ fontSize: "14px" }}>
+                      <span
+                        className="h444____dask__"
+                        style={{ fontSize: "14px" }}
+                      >
                         {bookingDetail._id}
                       </span>
-                    </h4>
+                    </p>
                   </div>
                 ))
               ) : (
