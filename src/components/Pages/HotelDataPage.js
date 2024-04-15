@@ -293,7 +293,9 @@ function HotelDataPage() {
             </div>
           </div>
           <div className="HotelDataPage_data_component_div">
-            <h1>Showing Properties in {hotelCity}</h1>
+            <h1 className="heading___hotel__data__page">
+              Showing Properties in {hotelCity}
+            </h1>
             {hotelData.map((data, index) => (
               <div
                 onClick={() => handleSetHotelId(data._id)}
