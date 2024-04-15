@@ -72,7 +72,7 @@ function BookingPageFlight() {
     <div className="BookingPageFlight_parent">
       <SecondaryNav2 />
       <div className="BookingPageFlight_Child">
-        <div className="combg" style={{ width: "1200px", marginTop: "20px" }}>
+        <div className="combg" style={{ marginTop: "20px" }}>
           <h3
             className="completeurbooking"
             style={{ color: "white", width: "100%" }}

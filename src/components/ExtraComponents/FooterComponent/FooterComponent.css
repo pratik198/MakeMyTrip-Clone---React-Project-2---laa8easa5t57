@@ -60,10 +60,33 @@ strong {
   .footer___text {
     position: relative;
     right: 43px;
-    top: 41px;
+    top: 25em;
   }
   .footer___ttext {
     display: none;
   }
 }
 /* new */
+
+@media screen and (max-width: 320px) {
+  .footer___text {
+    position: relative;
+    right: 43px;
+    top: -6em;
+  }
+  .fottttterer {
+    font-size: 8px;
+  }
+
+  .footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 67px 155px;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    left: -15px;
+  }
+}

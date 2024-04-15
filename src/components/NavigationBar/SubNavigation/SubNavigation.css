@@ -140,3 +140,11 @@
     display: none !important;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .SubNavigation_child_div {
+    width: 100%;
+    position: relative;
+    left: 0;
+  }
+}

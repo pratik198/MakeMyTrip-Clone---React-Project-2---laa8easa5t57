@@ -262,7 +262,7 @@ function HotelDetailDataPage() {
         <p style={{ marginLeft: "10px" }}>{hotelData?.location}</p>
       </div>
       <div className="hotelDetailRoomsSection">
-        <div className="w-[100%] h-[6vh] flex bg-[#efececd4] text-[13px] font-medium">
+        <div className="w-[100%] h-[6vh] flex bg-[#efececd4] text-[13px] font-medium headerrrrr__hotel">
           <div className="h-[100%] w-[25%] flex items-center">
             <p className="ml-[40px]">Room Type</p>
           </div>
@@ -302,7 +302,7 @@ function HotelDetailDataPage() {
                   </div>
                 </div>
               </div>
-              <div className="border border-solid border-[lightgray] h-[100%] w-[700px] flex justify-center items-center">
+              <div className="border border-solid border-[lightgray] h-[100%] w-[700px] flex justify-center items-center middddddddd">
                 <div className="w-[95%] h-[95%]">
                   <div className="w-[100%] h-[15%] flex items-center gap-[5px]">
                     <p className="h-[18px] w-[4px] rounded-[3px] bg-[#0c6be9] "></p>

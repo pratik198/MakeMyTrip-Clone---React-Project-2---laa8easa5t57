@@ -74,10 +74,7 @@ function BookingPageTrain() {
     <div className="BookingPageTrain_parent">
       <SecondaryNav2 />
       <div className="BookingPageTrain_Child">
-        <div
-          className="heading_____booking"
-          style={{ width: "1200px", marginTop: "20px" }}
-        >
+        <div className="heading_____booking" style={{ marginTop: "20px" }}>
           <h3 style={{ color: "white" }}>Complete Your Booking</h3>
         </div>
         <div className="BookingPageTrain_Child_data">

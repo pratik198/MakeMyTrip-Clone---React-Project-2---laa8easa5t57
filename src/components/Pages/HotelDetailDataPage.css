@@ -149,3 +149,11 @@
     align-items: flex-end;
   }
 }
+@media only screen and (max-width: 600px) {
+  .middddddddd {
+    display: none !important;
+  }
+  .headerrrrr__hotel {
+    margin-left: 0;
+  }
+}

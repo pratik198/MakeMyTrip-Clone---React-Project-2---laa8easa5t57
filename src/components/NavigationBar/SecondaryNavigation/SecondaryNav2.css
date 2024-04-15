@@ -119,3 +119,23 @@
     /* border: 1px solid black; */
   }
 }
+
+@media screen and (max-width: 320px) {
+  .SecondaryNav2__Navigation_Container_makeMytrip_logo {
+    width: 44px;
+    height: 21px;
+    cursor: pointer;
+  }
+  .BusDataPage_Search_Bar_from,
+  .BusDataPage_Search_Bar_To,
+  .BusDataPage_Search_Bar_Departure {
+    width: 190px;
+    height: 59px;
+    background-color: #ffffff1a;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    color: #53b2fe;
+    font-size: 11px;
+  }
+}

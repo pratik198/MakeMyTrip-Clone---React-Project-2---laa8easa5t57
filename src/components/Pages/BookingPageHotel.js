@@ -67,10 +67,7 @@ function BookingPageHotel() {
     <div className="BookingPageHotel_parent">
       <SecondaryNav2 />
       <div className="BookingPageHotel_Child">
-        <div
-          className="booking__page__hotel"
-          style={{ width: "1200px", marginTop: "20px" }}
-        >
+        <div className="booking__page__hotel" style={{ marginTop: "20px" }}>
           <h3 style={{ color: "white" }}>Complete Your Booking</h3>
         </div>
         <div className="BookingPageHotel_Child_data">
@@ -161,6 +158,7 @@ function BookingPageHotel() {
               <h3>Add Traveller Details</h3>
               <div className="BookingPageHotel_Child_data_left_data2_traveller_Detail">
                 <div
+                  className="lasttt__name"
                   style={{
                     display: "flex",
                     justifyContent: "space-between",

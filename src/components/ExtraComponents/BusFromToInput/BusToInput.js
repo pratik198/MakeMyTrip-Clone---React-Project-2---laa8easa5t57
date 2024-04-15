@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../../context/MyContext";
-
+import "./Buss.css";
 const BusToInput = ({ onClose }) => {
   const HotelCity = [
     "Indore, Madhya Pradesh",
@@ -67,7 +67,7 @@ const BusToInput = ({ onClose }) => {
   };
 
   return (
-    <div className="w-67 h-55 absolute bg-slate-50 mt-10 p-2 rounded shadow-[0_8px_30px_rgb(0,0,0,0.12)] z-10">
+    <div className="w-67 h-55 absolute bg-slate-50 mt-10 p-2 rounded shadow-[0_8px_30px_rgb(0,0,0,0.12)] z-10 bussssss">
       <input
         className="mb-3 w-full p-2"
         value={inputValue}

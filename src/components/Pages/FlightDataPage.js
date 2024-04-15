@@ -434,7 +434,10 @@ function FlightDataPage() {
                           <div className="text-[13px] w-[83%] text-[#333] flex justify-center">
                             <span>{flightApidata?.duration}h 10m</span>
                           </div>
-                          <img src="https://flight.easemytrip.com/Content/img/arow_main.png" />
+                          <img
+                            className="img__arrow"
+                            src="https://flight.easemytrip.com/Content/img/arow_main.png"
+                          />
                           <div className="text-[11px] w-[83%] text-[#737373] flex items-center justify-center">
                             <span>
                               {flightApidata?.stops == 0 ? (
@@ -454,8 +457,8 @@ function FlightDataPage() {
                           </div>
                         </div>
                       </div>
-                      <div className=" h-[100%] w-[20%] flex flex-col items-center justify-center">
-                        <div className="text-[20px] w-[83%] font-[600] flex justify-center  gap-[5px]">
+                      <div className=" h-[100%] w-[20%] flex flex-col items-center justify-center ">
+                        <div className="text-[20px] w-[83%] font-[600] flex justify-center  gap-[5px] font________sizee">
                           <i>₹</i> <span>{flightApidata?.ticketPrice}</span>
                         </div>
                         <div className="text-[11px] w-[83%] text-[#737373] flex justify-center">

@@ -1,0 +1,14 @@
+@media only screen and (max-width: 600px) {
+  .bussssss {
+    position: absolute;
+    left: 101%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .bussssss {
+    position: absolute;
+    left: 126%;
+    height: 180px;
+  }
+}

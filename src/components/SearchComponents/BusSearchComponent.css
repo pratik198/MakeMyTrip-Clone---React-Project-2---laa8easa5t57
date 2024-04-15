@@ -209,3 +209,8 @@
     cursor: pointer;
   }
 }
+@media screen and (max-width: 320px) {
+  .BusSearchComponent_Child_radio p {
+    font-size: 11px;
+  }
+}

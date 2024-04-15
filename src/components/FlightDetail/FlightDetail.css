@@ -1,0 +1,12 @@
+@media screen and (max-width: 320px) {
+  .flight__information {
+    font-size: 8px;
+  }
+  .spannn__df {
+    font-size: 9px;
+  }
+  .detailsssssss {
+    position: relative;
+    bottom: 30px;
+  }
+}

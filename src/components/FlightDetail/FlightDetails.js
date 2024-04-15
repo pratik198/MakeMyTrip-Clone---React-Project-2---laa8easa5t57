@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../context/MyContext";
 import moment from "moment";
+import "./FlightDetail.css";
 function FlightDetail() {
   const [hotelDetailError, setHotelDetailError] = useState(null);
   const [flightDetailData, setFlightDetailData] = useState([]);
@@ -40,7 +41,7 @@ function FlightDetail() {
   return (
     <div className="h-[100%] w-[100%] flex flex-col items-center">
       <div className="h-[5vh] w-[98%] mt-[10px] bg-[#f6f4f4]">
-        <div className="h-[100%] w-[23%] text-[13px]  font-[500] bg-[#53B2FE]  text-[#fff] flex justify-center items-center">
+        <div className="h-[100%] w-[23%] text-[13px]  font-[500] bg-[#53B2FE]  text-[#fff] flex justify-center items-center flight__information">
           <p>Flight Information</p>
         </div>
       </div>
@@ -54,12 +55,12 @@ function FlightDetail() {
           </div>
           <div className=" w-[100%] h-[75%] flex">
             <div className=" w-[25%] h-[100%] flex ">
-              <span className="text-[16px] text-[#1e1f1f]">
+              <span className="text-[16px] text-[#1e1f1f] spannn__df">
                 {flightDetailData?.flightID}
               </span>
             </div>
-            <div className=" w-[75%] h-[100%] flex gap-[10px]">
-              <div className="w-[32%] h-[100%] flex flex-col items-center">
+            <div className=" w-[75%] h-[100%] flex gap-[10px] detailsssssss">
+              <div className="w-[32%] h-[100%] flex flex-col items-center ">
                 <div className="w-[80%]">
                   <div className="text-[20px] text-[#333] font-[600] ">
                     {flightDetailData?.departureTime}

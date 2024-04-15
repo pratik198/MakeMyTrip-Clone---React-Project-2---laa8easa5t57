@@ -184,3 +184,60 @@
     width: 94%;
   }
 }
+@media screen and (max-width: 320px) {
+  .FlightDataPage_Child_Div {
+    width: 100%;
+  }
+  /* .FlightDataPage_data_div {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 8px;
+    position: relative;
+    top: 46em;
+  } */
+  .fd_h {
+    font-size: 25px;
+    margin-left: -1px;
+  }
+  /* .FlightDataPage_data {
+    margin-top: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 100%;
+  } */
+  .FlightDataPage_data_div {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: -11px;
+    position: relative;
+    top: 46em;
+  }
+  .FlightDataPage_data {
+    margin-top: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 100%;
+    position: relative;
+    left: 11px;
+  }
+  .FlightDataPage_SearchBar_From_div,
+  .FlightDataPage_SearchBar_To_div,
+  .FlightDataPage_SearchBar_Depart_div,
+  .FlightDataPage_SearchBar_Passenger_div {
+    width: 160px;
+    height: 60px;
+    margin-left: 0;
+    color: #008cff;
+    font-size: 12px;
+    padding: 5px;
+    background: hsla(0, 0%, 100%, 0.1);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .img__arrow {
+    width: 100%;
+  }
+  .font________sizee {
+    font-size: 12px;
+  }
+}

@@ -74,7 +74,10 @@ function BookingPageBus() {
     <div className="BookingPageBus_parent">
       <SecondaryNav2 />
       <div className="BookingPageBus_Child">
-        <div style={{ width: "1200px", marginTop: "20px" }}>
+        <div
+          className="bus____complete"
+          // style={{ width: "1200px", marginTop: "20px" }}
+        >
           <h3 className="complete__booking_ssection" style={{ color: "white" }}>
             Complete Your Booking
           </h3>
@@ -192,6 +195,7 @@ function BookingPageBus() {
               <h3>Add Traveller Details</h3>
               <div className="BookingPageBus_Child_data_left_data2_traveller_Detail">
                 <div
+                  className="bussssss__pageeee"
                   style={{
                     display: "flex",
                     justifyContent: "space-between",

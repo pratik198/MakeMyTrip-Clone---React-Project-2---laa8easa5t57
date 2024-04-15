@@ -124,4 +124,33 @@
     align-items: center;
     padding: 20px;
   }
+  .Login_comp_btn {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+    border: none;
+    height: 50px;
+    margin-top: 20px;
+    width: 225px;
+    border-radius: 10px;
+    background-image: linear-gradient(93deg, #198cea, #065af3);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .Login_comp_btn {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+    border: none;
+    height: 50px;
+    margin-top: 20px;
+    width: 225px;
+    border-radius: 10px;
+    background-image: linear-gradient(93deg, #198cea, #065af3);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
 }

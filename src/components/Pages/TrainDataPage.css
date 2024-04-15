@@ -242,3 +242,10 @@
     width: 99px;
   }
 }
+@media only screen and (max-width: 600px) {
+  .TrainDataPage_Right_data_details img {
+    width: 24px;
+    height: 5px;
+    margin-top: 10px;
+  }
+}
