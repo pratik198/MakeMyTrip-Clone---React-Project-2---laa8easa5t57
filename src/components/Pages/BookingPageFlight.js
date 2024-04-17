@@ -22,6 +22,42 @@ function BookingPageFlight() {
   const [lastName, setLastName] = useState("");
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("male");
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    if (!/^[6-9]\d{9}$/.test(mobileNo)) {
+      alert("Mobile No is invalid");
+      return false;
+    }
+
+    if (email === "") {
+      alert("Email is required");
+      return false;
+    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+      alert("Email is invalid");
+      return false;
+    }
+
+    if (firstName === "") {
+      alert("First Name is required");
+      return false;
+    }
+
+    if (lastName === "") {
+      alert("Last Name is required");
+      return false;
+    }
+
+    if (age === "") {
+      alert("Age is required");
+      return false;
+    } else if (isNaN(age) || age <= 0) {
+      alert("Age must be a positive number");
+      return false;
+    }
+
+    return true;
+  };
 
   const fetchSingleFlightData = async () => {
     try {
@@ -51,10 +87,14 @@ function BookingPageFlight() {
   }, []);
 
   const handleBookingContinue = (busfare, bookingType, busId) => {
-    navigate("/paymentpageFlight");
-    setFare(busfare);
-    setBookingId(busId);
-    setBookingType(bookingType);
+    const isValid = validateForm();
+
+    if (isValid) {
+      navigate("/paymentpageFlight");
+      setFare(busfare);
+      setBookingId(busId);
+      setBookingType(bookingType);
+    }
   };
 
   const isContinueButtonDisabled = () => {
