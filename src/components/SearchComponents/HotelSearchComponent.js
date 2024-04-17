@@ -70,6 +70,7 @@ const HotelSearchComponent = () => {
                 onChange={(date) => setCheckInDate(date)}
                 dateFormat="dd MMM yy"
                 className="date-picker"
+                minDate={new Date()}
               />
             </div>
             <div className="HotelSearchComponenet_Child_Departure">
@@ -80,6 +81,7 @@ const HotelSearchComponent = () => {
                 onChange={(date) => setCheckOutDate(date)}
                 dateFormat="dd MMM yy"
                 className="date-picker"
+                minDate={new Date()}
               />
             </div>
             <div

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 
 function BookingPageHotel() {
   const { HotelBookinId, setFare, setBookingType, setBookingId } = useAuth();
-  const [HotelBookingData, setHotelBookingDetailData] = useState([]);
+  const [HotelBookingData, setHotelBookingDetailData] = useState({});
   const navigate = useNavigate();
   const taxes = Math.floor(Math.random() * 1000) + 1;
 
@@ -17,6 +17,47 @@ function BookingPageHotel() {
   const [lastName, setLastName] = useState("");
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("male");
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    let valid = true;
+    const errors = {};
+
+    if (!/^[6-9]\d{9}$/.test(mobileNo)) {
+      errors.mobileNo = "Mobile No is invalid";
+      valid = false;
+    }
+
+    if (email === "") {
+      errors.email = "Email is required";
+      valid = false;
+    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+      errors.email = "Email is invalid";
+      valid = false;
+    }
+
+    if (firstName === "") {
+      errors.firstName = "First Name is required";
+      valid = false;
+    }
+
+    if (lastName === "") {
+      errors.lastName = "Last Name is required";
+      valid = false;
+    }
+
+    if (age === "") {
+      errors.age = "Age is required";
+      valid = false;
+    } else if (isNaN(age) || age <= 0) {
+      errors.age = "Age must be a positive number";
+      valid = false;
+    }
+
+    setErrors(errors);
+
+    return valid;
+  };
 
   const fetchSingleFlightData = async () => {
     try {
@@ -34,7 +75,6 @@ function BookingPageHotel() {
       if (response.ok) {
         const data = await response.json();
         setHotelBookingDetailData(data?.data);
-        console.log(data);
       }
     } catch (error) {
       console.error("Error fetching hotel data:", error);
@@ -45,15 +85,16 @@ function BookingPageHotel() {
     fetchSingleFlightData();
   }, []);
 
-  const handlepaymentPage = (busfare, bookingType, busId) => {
-    navigate("/paymentpagehotel");
-    setFare(busfare);
-    setBookingId(busId);
-    setBookingType(bookingType);
+  const handlepaymentPage = () => {
+    if (validateForm()) {
+      navigate("/paymentpagehotel");
+      setFare(Math.floor(HotelBookingData.avgCostPerNight));
+      setBookingId(HotelBookingData._id);
+      setBookingType("hotel");
+    }
   };
 
   const isContinueButtonDisabled = () => {
-    // Check if any of the required input fields are empty
     return (
       mobileNo === "" ||
       email === "" ||
@@ -143,6 +184,9 @@ function BookingPageHotel() {
                     value={mobileNo}
                     onChange={(e) => setMobileNo(e.target.value)}
                   />
+                  {errors.mobileNo && (
+                    <p className="error">{errors.mobileNo}</p>
+                  )}
                 </div>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <label>Email Address</label>
@@ -151,6 +195,7 @@ function BookingPageHotel() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
+                  {errors.email && <p className="error">{errors.email}</p>}
                 </div>
               </div>
             </div>
@@ -172,6 +217,9 @@ function BookingPageHotel() {
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                     />
+                    {errors.firstName && (
+                      <p className="error">{errors.firstName}</p>
+                    )}
                   </div>
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label>Last Name</label>
@@ -180,6 +228,9 @@ function BookingPageHotel() {
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
                     />
+                    {errors.lastName && (
+                      <p className="error">{errors.lastName}</p>
+                    )}
                   </div>
                 </div>
                 <div
@@ -193,6 +244,7 @@ function BookingPageHotel() {
                       value={age}
                       onChange={(e) => setAge(e.target.value)}
                     />
+                    {errors.age && <p className="error">{errors.age}</p>}
                   </div>
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label style={{ marginTop: "10px" }}>Gender</label>
@@ -253,13 +305,7 @@ function BookingPageHotel() {
               </div>
             </div>
             <button
-              onClick={() =>
-                handlepaymentPage(
-                  Math.floor(HotelBookingData.avgCostPerNight),
-                  "hotel",
-                  HotelBookingData._id
-                )
-              }
+              onClick={handlepaymentPage}
               className="HotelBooingpageBtn"
               disabled={isContinueButtonDisabled()}
             >

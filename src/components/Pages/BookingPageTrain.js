@@ -13,7 +13,7 @@ function BookingPageTrain() {
     setBookingType,
     setBookingId,
   } = useAuth();
-  const [TrainBookingData, setTrainBookingDetailData] = useState([]);
+  const [TrainBookingData, setTrainBookingDetailData] = useState({});
   const navigate = useNavigate();
   const taxes = Math.floor(Math.random() * 1000) + 1;
 
@@ -24,6 +24,47 @@ function BookingPageTrain() {
   const [lastName, setLastName] = useState("");
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("male");
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    let valid = true;
+    const newErrors = {};
+
+    if (!/^[6-9]\d{9}$/.test(mobileNo)) {
+      newErrors.mobileNo = "Mobile No is invalid";
+      valid = false;
+    }
+
+    if (email === "") {
+      newErrors.email = "Email is required";
+      valid = false;
+    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+      newErrors.email = "Email is invalid";
+      valid = false;
+    }
+
+    if (firstName === "") {
+      newErrors.firstName = "First Name is required";
+      valid = false;
+    }
+
+    if (lastName === "") {
+      newErrors.lastName = "Last Name is required";
+      valid = false;
+    }
+
+    if (age === "") {
+      newErrors.age = "Age is required";
+      valid = false;
+    } else if (isNaN(age) || age <= 0) {
+      newErrors.age = "Age must be a positive number";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+
+    return valid;
+  };
 
   const fetchSingleFlightData = async () => {
     try {
@@ -40,11 +81,10 @@ function BookingPageTrain() {
 
       if (response.ok) {
         const data = await response.json();
-        console.log(data.data);
         setTrainBookingDetailData(data?.data);
       }
     } catch (error) {
-      console.error("Error fetching hotel data:", error);
+      console.error("Error fetching train data:", error);
     }
   };
 
@@ -52,15 +92,16 @@ function BookingPageTrain() {
     fetchSingleFlightData();
   }, []);
 
-  const handlePaymentPage = (busfare, bookingType, busId) => {
-    navigate("/paymentpageTrain");
-    setFare(busfare);
-    setBookingId(busId);
-    setBookingType(bookingType);
+  const handlePaymentPage = () => {
+    if (validateForm()) {
+      navigate("/paymentpageTrain");
+      setFare(TrainBookingData.fare);
+      setBookingId(TrainBookingData._id);
+      setBookingType("train");
+    }
   };
 
   const isContinueButtonDisabled = () => {
-    // Check if any of the required input fields are empty
     return (
       mobileNo === "" ||
       email === "" ||
@@ -175,6 +216,9 @@ function BookingPageTrain() {
                     value={mobileNo}
                     onChange={(e) => setMobileNo(e.target.value)}
                   />
+                  {errors.mobileNo && (
+                    <p className="error">{errors.mobileNo}</p>
+                  )}
                 </div>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <label>Email Address</label>
@@ -183,6 +227,7 @@ function BookingPageTrain() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
+                  {errors.email && <p className="error">{errors.email}</p>}
                 </div>
               </div>
             </div>
@@ -204,6 +249,9 @@ function BookingPageTrain() {
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                     />
+                    {errors.firstName && (
+                      <p className="error">{errors.firstName}</p>
+                    )}
                   </div>
 
                   <div
@@ -216,6 +264,9 @@ function BookingPageTrain() {
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
                     />
+                    {errors.lastName && (
+                      <p className="error">{errors.lastName}</p>
+                    )}
                   </div>
                 </div>
                 <div
@@ -229,6 +280,7 @@ function BookingPageTrain() {
                       value={age}
                       onChange={(e) => setAge(e.target.value)}
                     />
+                    {errors.age && <p className="error">{errors.age}</p>}
                   </div>
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label style={{ marginTop: "10px" }}>Gender</label>
@@ -287,13 +339,7 @@ function BookingPageTrain() {
               </div>
             </div>
             <button
-              onClick={() =>
-                handlePaymentPage(
-                  TrainBookingData.fare,
-                  "train",
-                  TrainBookingData._id
-                )
-              }
+              onClick={handlePaymentPage}
               className="HotelBooingpageBtn"
               disabled={isContinueButtonDisabled()}
             >

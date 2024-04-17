@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import "./BookingPageFlight.css";
 import SecondaryNav2 from "../NavigationBar/SecondaryNavigation/SecondaryNav2";
 import { useAuth } from "../context/MyContext";
@@ -13,9 +13,9 @@ function BookingPageFlight() {
     setBookingType,
     setBookingId,
   } = useAuth();
-  const [flightBookingData, setFlightBookingDetailData] = useState([]);
+
+  const [flightBookingData, setFlightBookingDetailData] = useState({});
   const navigate = useNavigate();
-  const taxes = useMemo(() => Math.floor(Math.random() * 1000) + 1, []);
   const [mobileNo, setMobileNo] = useState("");
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -25,38 +25,43 @@ function BookingPageFlight() {
   const [errors, setErrors] = useState({});
 
   const validateForm = () => {
+    let valid = true;
+    const errors = {};
+
     if (!/^[6-9]\d{9}$/.test(mobileNo)) {
-      alert("Mobile No is invalid");
-      return false;
+      errors.mobileNo = "Mobile No is invalid";
+      valid = false;
     }
 
     if (email === "") {
-      alert("Email is required");
-      return false;
+      errors.email = "Email is required";
+      valid = false;
     } else if (!/^\S+@\S+\.\S+$/.test(email)) {
-      alert("Email is invalid");
-      return false;
+      errors.email = "Email is invalid";
+      valid = false;
     }
 
     if (firstName === "") {
-      alert("First Name is required");
-      return false;
+      errors.firstName = "First Name is required";
+      valid = false;
     }
 
     if (lastName === "") {
-      alert("Last Name is required");
-      return false;
+      errors.lastName = "Last Name is required";
+      valid = false;
     }
 
     if (age === "") {
-      alert("Age is required");
-      return false;
+      errors.age = "Age is required";
+      valid = false;
     } else if (isNaN(age) || age <= 0) {
-      alert("Age must be a positive number");
-      return false;
+      errors.age = "Age must be a positive number";
+      valid = false;
     }
 
-    return true;
+    setErrors(errors);
+
+    return valid;
   };
 
   const fetchSingleFlightData = async () => {
@@ -75,7 +80,6 @@ function BookingPageFlight() {
       if (response.ok) {
         const data = await response.json();
         setFlightBookingDetailData(data?.data);
-        console.log(data);
       }
     } catch (error) {
       console.error("Error fetching flight data:", error);
@@ -86,19 +90,16 @@ function BookingPageFlight() {
     fetchSingleFlightData();
   }, []);
 
-  const handleBookingContinue = (busfare, bookingType, busId) => {
-    const isValid = validateForm();
-
-    if (isValid) {
+  const handleBookingContinue = () => {
+    if (validateForm()) {
       navigate("/paymentpageFlight");
-      setFare(busfare);
-      setBookingId(busId);
-      setBookingType(bookingType);
+      setFare(flightBookingData.ticketPrice);
+      setBookingId(flightBookingData._id);
+      setBookingType("flight");
     }
   };
 
   const isContinueButtonDisabled = () => {
-    // Check if any of the required input fields are empty
     return (
       mobileNo === "" ||
       email === "" ||
@@ -223,6 +224,9 @@ function BookingPageFlight() {
                     value={mobileNo}
                     onChange={(e) => setMobileNo(e.target.value)}
                   />
+                  {errors.mobileNo && (
+                    <p className="error">{errors.mobileNo}</p>
+                  )}
                 </div>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <label>Email Address</label>
@@ -231,6 +235,7 @@ function BookingPageFlight() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
+                  {errors.email && <p className="error">{errors.email}</p>}
                 </div>
               </div>
             </div>
@@ -252,6 +257,9 @@ function BookingPageFlight() {
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                     />
+                    {errors.firstName && (
+                      <p className="error">{errors.firstName}</p>
+                    )}
                   </div>
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label>Last Name</label>
@@ -260,6 +268,9 @@ function BookingPageFlight() {
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
                     />
+                    {errors.lastName && (
+                      <p className="error">{errors.lastName}</p>
+                    )}
                   </div>
                 </div>
                 <div
@@ -273,6 +284,7 @@ function BookingPageFlight() {
                       value={age}
                       onChange={(e) => setAge(e.target.value)}
                     />
+                    {errors.age && <p className="error">{errors.age}</p>}
                   </div>
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label style={{ marginTop: "10px" }}>Gender</label>
@@ -293,7 +305,7 @@ function BookingPageFlight() {
           </div>
           <div className="BookingPageFlight_Child_data_right">
             <div>
-              <h3>Fare Summery</h3>
+              <h3>Fare Summary</h3>
               <div
                 style={{
                   display: "flex",
@@ -332,13 +344,7 @@ function BookingPageFlight() {
             </div>
 
             <button
-              onClick={() =>
-                handleBookingContinue(
-                  flightBookingData.ticketPrice,
-                  "flight",
-                  flightBookingData._id
-                )
-              }
+              onClick={handleBookingContinue}
               className="FlightBooingpageBtn"
               disabled={isContinueButtonDisabled()}
             >
