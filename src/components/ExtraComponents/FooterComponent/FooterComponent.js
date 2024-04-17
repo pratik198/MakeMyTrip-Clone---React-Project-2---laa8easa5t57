@@ -5,7 +5,30 @@ import qrcodeFooter from "../../../Assets/qrcodebooking.png";
 import citylist from "../../../Assets/cityfooter.png";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useRef } from "react";
+
 function FooterComponent() {
+  const cityListRef = useRef(null);
+  useEffect(() => {
+    const handleCityListClick = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
+
+    if (cityListRef.current) {
+      cityListRef.current.addEventListener("click", handleCityListClick);
+    }
+
+    return () => {
+      if (cityListRef.current) {
+        cityListRef.current.removeEventListener("click", handleCityListClick);
+      }
+    };
+  }, []);
   return (
     <div className="footer_main">
       <div className="section_1">
@@ -15,7 +38,7 @@ function FooterComponent() {
         <img src={qrcodeFooter} alt=".." />
       </div>
       <div className="section_1">
-        <img src={citylist} alt=".." />
+        <img src={citylist} alt=".." ref={cityListRef} />
       </div>
       <div className="footer___text">
         <p className="text-[13px] fottttterer">

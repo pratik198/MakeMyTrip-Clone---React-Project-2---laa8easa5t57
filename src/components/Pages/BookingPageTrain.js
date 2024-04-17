@@ -98,6 +98,8 @@ function BookingPageTrain() {
       setFare(TrainBookingData.fare);
       setBookingId(TrainBookingData._id);
       setBookingType("train");
+    } else {
+      // alert("Please fill in all the required fields.");
     }
   };
 
@@ -212,6 +214,9 @@ function BookingPageTrain() {
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <label>Mobile No</label>
                   <input
+                    style={{
+                      padding: "5px",
+                    }}
                     type="number"
                     value={mobileNo}
                     onChange={(e) => setMobileNo(e.target.value)}
@@ -223,6 +228,9 @@ function BookingPageTrain() {
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <label>Email Address</label>
                   <input
+                    style={{
+                      padding: "5px",
+                    }}
                     type="text"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -245,6 +253,9 @@ function BookingPageTrain() {
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label>First Name</label>
                     <input
+                      style={{
+                        padding: "5px",
+                      }}
                       type="text"
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
@@ -260,6 +271,9 @@ function BookingPageTrain() {
                   >
                     <label>Last Name</label>
                     <input
+                      style={{
+                        padding: "5px",
+                      }}
                       type="text"
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
@@ -275,7 +289,7 @@ function BookingPageTrain() {
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label style={{ marginTop: "10px" }}>Age</label>
                     <input
-                      style={{ width: "80px" }}
+                      style={{ width: "80px", padding: "5px" }}
                       type="number"
                       value={age}
                       onChange={(e) => setAge(e.target.value)}
@@ -341,7 +355,7 @@ function BookingPageTrain() {
             <button
               onClick={handlePaymentPage}
               className="HotelBooingpageBtn"
-              disabled={isContinueButtonDisabled()}
+              // disabled={isContinueButtonDisabled()}
             >
               Continue
             </button>

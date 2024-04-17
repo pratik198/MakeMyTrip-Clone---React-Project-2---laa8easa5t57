@@ -24,6 +24,8 @@ function BookingPageFlight() {
   const [gender, setGender] = useState("male");
   const [errors, setErrors] = useState({});
 
+  const [errorMessage, setErrorMessage] = useState("");
+
   const validateForm = () => {
     let valid = true;
     const errors = {};
@@ -63,7 +65,6 @@ function BookingPageFlight() {
 
     return valid;
   };
-
   const fetchSingleFlightData = async () => {
     try {
       const projectID = "laa8easa5t57";
@@ -91,11 +92,15 @@ function BookingPageFlight() {
   }, []);
 
   const handleBookingContinue = () => {
-    if (validateForm()) {
+    const isValid = validateForm();
+
+    if (isValid) {
       navigate("/paymentpageFlight");
       setFare(flightBookingData.ticketPrice);
       setBookingId(flightBookingData._id);
       setBookingType("flight");
+    } else {
+      // alert("Please fill in all the required fields.");
     }
   };
 
@@ -220,6 +225,9 @@ function BookingPageFlight() {
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <label>Mobile No</label>
                   <input
+                    style={{
+                      padding: "5px",
+                    }}
                     type="number"
                     value={mobileNo}
                     onChange={(e) => setMobileNo(e.target.value)}
@@ -231,6 +239,9 @@ function BookingPageFlight() {
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <label>Email Address</label>
                   <input
+                    style={{
+                      padding: "5px",
+                    }}
                     type="text"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -253,6 +264,9 @@ function BookingPageFlight() {
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label>First Name</label>
                     <input
+                      style={{
+                        padding: "5px",
+                      }}
                       type="text"
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
@@ -264,6 +278,9 @@ function BookingPageFlight() {
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label>Last Name</label>
                     <input
+                      style={{
+                        padding: "5px",
+                      }}
                       type="text"
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
@@ -279,7 +296,7 @@ function BookingPageFlight() {
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label style={{ marginTop: "10px" }}>Age</label>
                     <input
-                      style={{ width: "80px" }}
+                      style={{ width: "80px", padding: "5px" }}
                       type="number"
                       value={age}
                       onChange={(e) => setAge(e.target.value)}
@@ -346,10 +363,11 @@ function BookingPageFlight() {
             <button
               onClick={handleBookingContinue}
               className="FlightBooingpageBtn"
-              disabled={isContinueButtonDisabled()}
+              // disabled={isContinueButtonDisabled()}
             >
               Continue
             </button>
+            {errorMessage && <p className="error">{errorMessage}</p>}
           </div>
         </div>
       </div>

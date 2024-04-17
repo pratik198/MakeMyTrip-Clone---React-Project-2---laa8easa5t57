@@ -9,14 +9,50 @@ function PaymentPage() {
   const { fare, bookingId, bookingType } = useAuth();
   const token = localStorage.getItem("jwtToken");
   const [showSuccessfull, setShowSuccessfull] = useState(false);
-
+  const [upiId, setUpiId] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
+  const [cardName, setCardName] = useState("");
+  const [expiryMonth, setExpiryMonth] = useState("");
+  const [expiryYear, setExpiryYear] = useState("");
+  const [cvv, setCvv] = useState("");
+  const [error, setError] = useState("");
   const taxes = Math.floor(Math.random() * 1000) + 1;
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
+    setShowSuccessfull(false);
+    setError("");
   };
 
   const fetchPaymentData = () => {
+    if (selectedOption === "UPI") {
+      if (upiId.trim() === "") {
+        setError("Please enter UPI ID");
+        return;
+      }
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailRegex.test(upiId)) {
+        setError("Please enter a valid email address for UPI ID");
+        return;
+      }
+    } else if (selectedOption === "DebitCreditCard") {
+      if (cardNumber.trim() === "") {
+        setError("Please enter Card Number");
+        return;
+      }
+      if (cardName.trim() === "") {
+        setError("Please enter Name on Card");
+        return;
+      }
+      if (expiryMonth.trim() === "" || expiryYear.trim() === "") {
+        setError("Please enter Expiry Month and Year");
+        return;
+      }
+      if (cvv.trim() === "") {
+        setError("Please enter CVV");
+        return;
+      }
+    }
     const api =
       "https://academics.newtonschool.co/api/v1/bookingportals/booking";
     const projectid = "laa8easa5t57";
@@ -124,6 +160,8 @@ function PaymentPage() {
                 <input
                   style={{ width: "200px", fontSize: "20px", padding: "10px" }}
                   type="text"
+                  value={upiId}
+                  onChange={(e) => setUpiId(e.target.value)}
                 />
                 <button
                   onClick={fetchPaymentData}
@@ -131,6 +169,18 @@ function PaymentPage() {
                 >
                   Pay Now
                 </button>
+                {error && (
+                  <p
+                    style={{
+                      color: "red",
+                      fontSize: "14px",
+                      position: "absolute",
+                      top: "21em",
+                    }}
+                  >
+                    {error}
+                  </p>
+                )}
               </div>
               <p style={{ textAlign: "center" }}>or</p>
               <div>
@@ -170,7 +220,9 @@ function PaymentPage() {
                     fontSize: "18px",
                   }}
                   type="text"
-                  placeholder="Enter Your Card Number Here"
+                  placeholder="Enter Your Card Number"
+                  value={cardNumber}
+                  onChange={(e) => setCardNumber(e.target.value)}
                 />
               </div>
               <div
@@ -190,6 +242,8 @@ function PaymentPage() {
                   }}
                   type="text"
                   placeholder="Enter Your Name On Card"
+                  value={cardName}
+                  onChange={(e) => setCardName(e.target.value)}
                 />
               </div>
               <label>Expiry Month, Year & CVV</label>
@@ -206,11 +260,15 @@ function PaymentPage() {
                     style={{ width: "200px", padding: "5px", fontSize: "18px" }}
                     type="number"
                     placeholder="Month"
+                    value={expiryMonth}
+                    onChange={(e) => setExpiryMonth(e.target.value)}
                   />
                   <input
                     style={{ width: "100px", padding: "5px", fontSize: "18px" }}
                     type="number"
                     placeholder="Year"
+                    value={expiryYear}
+                    onChange={(e) => setExpiryYear(e.target.value)}
                   />
                 </div>
                 <div>
@@ -218,6 +276,8 @@ function PaymentPage() {
                     style={{ width: "100px", padding: "5px", fontSize: "18px" }}
                     type="number"
                     placeholder="CVV"
+                    value={cvv}
+                    onChange={(e) => setCvv(e.target.value)}
                   />
                 </div>
               </div>
@@ -225,15 +285,15 @@ function PaymentPage() {
                 {" "}
                 Pay Now
               </button>
+              {error && (
+                <p style={{ color: "red", fontSize: "14px" }}>{error}</p>
+              )}
               <p
                 style={{ marginTop: "50px", fontSize: "11px", width: "480px" }}
               >
                 By continuing to pay, i understand and agree with the{" "}
-                <span style={{ color: "#008cff" }}>privacy policy</span>, the
-                <span style={{ color: "#008cff" }}>
-                  {" "}
-                  user agreement
-                </span> and{" "}
+                <span style={{ color: "#008cff" }}>privacy policy</span>, the{" "}
+                <span style={{ color: "#008cff" }}> user agreement</span> and{" "}
                 <span style={{ color: "#008cff" }}>terms of service</span> of
                 makemytrip
               </p>
@@ -255,11 +315,10 @@ function PaymentPage() {
           >
             <div>
               <h5 style={{ color: "gray" }}>Fare</h5>
-              {/* <h5 style={{ color: "gray", marginTop: "10px" }}>OTHERS</h5> */}
+              <h5 style={{ color: "gray", marginTop: "10px" }}>OTHERS</h5>
             </div>
             <div>
               <h5>&#8377; {fare}</h5>
-              <h5 style={{ marginTop: "10px" }}>&#8377; 659</h5>
             </div>
           </div>
           <div
@@ -281,7 +340,7 @@ function PaymentPage() {
           </div>
         </div>
       </div>
-      {showSuccessfull && <PaymentSuccessfull />}
+      {selectedOption === "UPI" && showSuccessfull && <PaymentSuccessfull />}
     </div>
   );
 }

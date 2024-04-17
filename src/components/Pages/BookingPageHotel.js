@@ -58,7 +58,6 @@ function BookingPageHotel() {
 
     return valid;
   };
-
   const fetchSingleFlightData = async () => {
     try {
       const projectID = "laa8easa5t57";
@@ -85,24 +84,28 @@ function BookingPageHotel() {
     fetchSingleFlightData();
   }, []);
 
-  const handlepaymentPage = () => {
-    if (validateForm()) {
+  const handleBookingContinue = () => {
+    const isValid = validateForm();
+
+    if (isValid) {
       navigate("/paymentpagehotel");
       setFare(Math.floor(HotelBookingData.avgCostPerNight));
       setBookingId(HotelBookingData._id);
       setBookingType("hotel");
+    } else {
+      // alert("Please fill in all the required fields.");
     }
   };
 
-  const isContinueButtonDisabled = () => {
-    return (
-      mobileNo === "" ||
-      email === "" ||
-      firstName === "" ||
-      lastName === "" ||
-      age === ""
-    );
-  };
+  // const isContinueButtonDisabled = () => {
+  //   return (
+  //     mobileNo === "" ||
+  //     email === "" ||
+  //     firstName === "" ||
+  //     lastName === "" ||
+  //     age === ""
+  //   );
+  // };
 
   return (
     <div className="BookingPageHotel_parent">
@@ -180,6 +183,9 @@ function BookingPageHotel() {
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <label>Mobile No</label>
                   <input
+                    style={{
+                      padding: "5px",
+                    }}
                     type="number"
                     value={mobileNo}
                     onChange={(e) => setMobileNo(e.target.value)}
@@ -191,6 +197,9 @@ function BookingPageHotel() {
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <label>Email Address</label>
                   <input
+                    style={{
+                      padding: "5px",
+                    }}
                     type="text"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -213,6 +222,9 @@ function BookingPageHotel() {
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label>First Name</label>
                     <input
+                      style={{
+                        padding: "5px",
+                      }}
                       type="text"
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
@@ -224,6 +236,9 @@ function BookingPageHotel() {
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label>Last Name</label>
                     <input
+                      style={{
+                        padding: "5px",
+                      }}
                       type="text"
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
@@ -239,7 +254,7 @@ function BookingPageHotel() {
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label style={{ marginTop: "10px" }}>Age</label>
                     <input
-                      style={{ width: "80px" }}
+                      style={{ width: "80px", padding: "5px" }}
                       type="number"
                       value={age}
                       onChange={(e) => setAge(e.target.value)}
@@ -305,9 +320,9 @@ function BookingPageHotel() {
               </div>
             </div>
             <button
-              onClick={handlepaymentPage}
+              onClick={handleBookingContinue}
               className="HotelBooingpageBtn"
-              disabled={isContinueButtonDisabled()}
+              // disabled={isContinueButtonDisabled()}
             >
               Continue
             </button>

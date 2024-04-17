@@ -24,7 +24,47 @@ function BookingPageBus() {
   const [lastName, setLastName] = useState("");
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("male");
+  const [errors, setErrors] = useState({});
 
+  const validateForm = () => {
+    let valid = true;
+    const errors = {};
+
+    if (!/^[6-9]\d{9}$/.test(mobileNo)) {
+      errors.mobileNo = "Mobile No is invalid";
+      valid = false;
+    }
+
+    if (email === "") {
+      errors.email = "Email is required";
+      valid = false;
+    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+      errors.email = "Email is invalid";
+      valid = false;
+    }
+
+    if (firstName === "") {
+      errors.firstName = "First Name is required";
+      valid = false;
+    }
+
+    if (lastName === "") {
+      errors.lastName = "Last Name is required";
+      valid = false;
+    }
+
+    if (age === "") {
+      errors.age = "Age is required";
+      valid = false;
+    } else if (isNaN(age) || age <= 0) {
+      errors.age = "Age must be a positive number";
+      valid = false;
+    }
+
+    setErrors(errors);
+
+    return valid;
+  };
   const fetchSingleFlightData = async () => {
     try {
       const projectID = "laa8easa5t57";
@@ -53,11 +93,24 @@ function BookingPageBus() {
   }, []);
 
   const handlePaymentPage = (busfare, bookingType, busId) => {
-    navigate("/paymentpageBus");
-    setFare(busfare);
-    setBookingId(busId);
-    setBookingType(bookingType);
+    const isValid = validateForm();
+
+    if (isValid) {
+      navigate("/paymentpageBus");
+      setFare(busfare);
+      setBookingId(busId);
+      setBookingType(bookingType);
+    } else {
+      // alert("Please fill in all the required fields.");
+    }
   };
+
+  // const handlePaymentPage = (busfare, bookingType, busId) => {
+  //   navigate("/paymentpageBus");
+  //   setFare(busfare);
+  //   setBookingId(busId);
+  //   setBookingType(bookingType);
+  // };
 
   const isContinueButtonDisabled = () => {
     // Check if any of the required input fields are empty
@@ -176,18 +229,28 @@ function BookingPageBus() {
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <label>Mobile No</label>
                   <input
+                    style={{
+                      padding: "5px",
+                    }}
                     type="number"
                     value={mobileNo}
                     onChange={(e) => setMobileNo(e.target.value)}
                   />
+                  {errors.mobileNo && (
+                    <p className="error">{errors.mobileNo}</p>
+                  )}
                 </div>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <label>Email Address</label>
                   <input
+                    style={{
+                      padding: "5px",
+                    }}
                     type="text"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
+                  {errors.email && <p className="error">{errors.email}</p>}
                 </div>
               </div>
             </div>
@@ -205,10 +268,16 @@ function BookingPageBus() {
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label>First Name</label>
                     <input
+                      style={{
+                        padding: "5px",
+                      }}
                       type="text"
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                     />
+                    {errors.firstName && (
+                      <p className="error">{errors.firstName}</p>
+                    )}
                   </div>
                   <div
                     className="right_side_ssectionnnn"
@@ -216,10 +285,16 @@ function BookingPageBus() {
                   >
                     <label>Last Name</label>
                     <input
+                      style={{
+                        padding: "5px",
+                      }}
                       type="text"
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
                     />
+                    {errors.lastName && (
+                      <p className="error">{errors.lastName}</p>
+                    )}
                   </div>
                 </div>
                 <div
@@ -228,11 +303,12 @@ function BookingPageBus() {
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label style={{ marginTop: "10px" }}>Age</label>
                     <input
-                      style={{ width: "80px" }}
+                      style={{ width: "80px", padding: "5px" }}
                       type="number"
                       value={age}
                       onChange={(e) => setAge(e.target.value)}
                     />
+                    {errors.age && <p className="error">{errors.age}</p>}
                   </div>
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label style={{ marginTop: "10px" }}>Gender</label>
@@ -299,7 +375,7 @@ function BookingPageBus() {
                 )
               }
               className="HotelBooingpageBtn"
-              disabled={isContinueButtonDisabled()}
+              // disabled={isContinueButtonDisabled()}
             >
               Continue
             </button>

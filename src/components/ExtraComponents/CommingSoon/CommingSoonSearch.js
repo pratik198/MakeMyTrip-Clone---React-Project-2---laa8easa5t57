@@ -12,6 +12,7 @@ const CommingSoonSearch = () => {
       <SubNavigation />
       <div className="CoomingSoonSearchComponenet_Child">
         <h1>Coming Soon....</h1>
+        {/* <div className="loading-spinner"></div> */}
       </div>
     </div>
   );
