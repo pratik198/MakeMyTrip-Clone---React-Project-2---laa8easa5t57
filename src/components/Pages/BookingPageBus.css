@@ -245,7 +245,9 @@
     align-items: center;
     justify-content: space-around;
     /* border: 1px solid black; */
-    overflow: hidden;
+    /* overflow: hidden;
+    position: fixed;
+    z-index: 1; */
   }
   .Login_child_login_div {
     background-color: white;

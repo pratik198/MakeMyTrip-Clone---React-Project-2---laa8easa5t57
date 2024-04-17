@@ -468,7 +468,7 @@ function FlightDataPage() {
                       <div className="h-[100%] w-[20%] flex justify-center items-center">
                         <p
                           onClick={() => handleFlightBookNow(flightApidata._id)}
-                          className="bg-[#53b2fe] rounded-[40px] text-[14px] text-[#fff] w-[90%] h-[40%] flex justify-center items-center cursor-pointer text-center"
+                          className="bg-[#53b2fe] rounded-[40px] text-[14px] text-[#fff] w-[90%] h-[40%] flex justify-center items-center cursor-pointer text-center btnnnnnnn"
                         >
                           Book Now
                         </p>
