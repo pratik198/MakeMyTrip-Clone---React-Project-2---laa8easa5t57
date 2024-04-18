@@ -52,12 +52,32 @@ function BookingSummery() {
       <div className="BookingSummeryChild">
         <div className="BookingSummeryChild_dataDiv">
           <div className="BookingSummeryChild_dataDiv_Bookings">
-            {/* <div>
-              <button onClick={() => handleType("flight")}>Flight</button>
-              <button onClick={() => handleType("hotel")}>Hotel</button>
-              <button onClick={() => handleType("bus")}>Bus</button>
-              <button onClick={() => handleType("train")}>Train</button>
-            </div> */}
+            <div className="booking__butonssss">
+              <button
+                className="btn__booking_summry"
+                onClick={() => handleType("flight")}
+              >
+                Flight
+              </button>
+              <button
+                className="btn__booking_summry"
+                onClick={() => handleType("hotel")}
+              >
+                Hotel
+              </button>
+              <button
+                className="btn__booking_summry"
+                onClick={() => handleType("bus")}
+              >
+                Bus
+              </button>
+              <button
+                className="btn__booking_summry"
+                onClick={() => handleType("train")}
+              >
+                Train
+              </button>
+            </div>
             <div className="BookingSummeryChild_dataDiv_Bookings_imgDiv">
               <img
                 className="BookingSummeryChild_dataDiv_Bookings_img"

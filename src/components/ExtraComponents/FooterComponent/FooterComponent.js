@@ -8,8 +8,19 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useRef } from "react";
-
+import Popup from "./Popup";
+import { useState } from "react";
 function FooterComponent() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
+
   const cityListRef = useRef(null);
   useEffect(() => {
     const handleCityListClick = () => {
@@ -31,10 +42,11 @@ function FooterComponent() {
   }, []);
   return (
     <div className="footer_main">
-      <div className="section_1">
+      <div className="section_1" onClick={openPopup}>
         <img src={flightExplore} alt="Flight Explore" />
       </div>
-      <div className="section_1">
+      {isPopupOpen && <Popup onClose={closePopup} />}
+      <div className="section_1" onClick={openPopup}>
         <img src={qrcodeFooter} alt=".." />
       </div>
       <div className="section_1">

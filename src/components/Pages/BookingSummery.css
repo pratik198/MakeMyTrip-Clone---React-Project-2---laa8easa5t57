@@ -48,6 +48,16 @@
 .BookingSummeryChild_dataDiv_Bookingsdata_left {
   width: 500px;
 }
+
+@media only screen and (max-width: 600px) {
+  .booking__butonssss {
+    display: flex;
+    position: absolute;
+    top: 107px;
+    left: 66px;
+  }
+}
+
 @media only screen and (max-width: 320px) {
   .BookingSummeryChild_dataDiv_Bookingsdata {
     box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
@@ -68,4 +78,26 @@
   .h444____dask__ {
     font-size: 9px !important;
   }
+  .booking__butonssss {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 109px;
+    left: 20px;
+  }
+}
+
+.btn__booking_summry {
+  padding: 10px 20px;
+  /* margin: 0 10px; */
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn__booking_summry:hover {
+  background-color: #007bff; /* Change to your preferred hover color */
+  color: white;
 }
