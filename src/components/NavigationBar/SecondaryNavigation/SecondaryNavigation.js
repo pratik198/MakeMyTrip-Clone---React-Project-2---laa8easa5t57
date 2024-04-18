@@ -5,36 +5,26 @@ import MakeMyTripLogo from "../../../Assets/mmtlogo2.png";
 import { useNavigate } from "react-router";
 import Login from "../../LoginSignUp/Login";
 
-// const SecondaryNavigation = () => {
-//   const navigate = useNavigate();
-
-//   const handleNavigateFlights = () => {
-//     navigate("/");
-//   };
-// }
-//   const handleNavigateHotels = () => {
-//     navigate("/hotelsearch");
-//   };
-//   const handleNavigateCommingSoon = () => {
-//     navigate("/commingsoonsearch");
-//   };
-
-//   const handleNavigateTrains = () => {
-//     navigate("/trainsearch");
-//   };
-
-//   const handleNavigateBuses = () => {
-//     navigate("/bussearch");
-//   };
-
 const SecondaryNavigation = () => {
   const navigate = useNavigate();
 
-  const handleNavigation = (option) => {
-    navigate(`/${option.toLowerCase()}search`);
-    localStorage.setItem("clicked", option);
+  const handleNavigateFlights = () => {
+    navigate("/");
+  };
+  const handleNavigateHotels = () => {
+    navigate("/hotelsearch");
+  };
+  const handleNavigateCommingSoon = () => {
+    navigate("/commingsoonsearch");
   };
 
+  const handleNavigateTrains = () => {
+    navigate("/trainsearch");
+  };
+
+  const handleNavigateBuses = () => {
+    navigate("/bussearch");
+  };
   const [loginOpen, setLoginOpen] = useState(false);
   const [, forceUpdate] = useState();
 
@@ -52,12 +42,12 @@ const SecondaryNavigation = () => {
       <div className="SecondaryNvigation__Child_Container">
         <div className="SecondaryNvigation__Navigation_Container">
           <img
-            onClick={() => handleNavigation("Flights")}
+            onClick={handleNavigateFlights}
             className="SecondaryNvigation__Navigation_Container_makeMytrip_logo"
             src={MakeMyTripLogo}
           />
           <ul>
-            <li onClick={() => handleNavigation("Flights")}>
+            <li onClick={handleNavigateFlights}>
               <div className="SecondaryNvigation__Navigation_FlightsImg_div">
                 <img
                   className="SecondaryNvigation__Navigation_FlightsImg"
@@ -66,7 +56,7 @@ const SecondaryNavigation = () => {
               </div>
               <span>Flights</span>
             </li>
-            <li onClick={() => handleNavigation("Hotels")}>
+            <li onClick={handleNavigateHotels}>
               <div className="SecondaryNvigation__Navigation_HotelsImg_div">
                 <img
                   className="SecondaryNvigation__Navigation_HotelsImg"
@@ -75,7 +65,7 @@ const SecondaryNavigation = () => {
               </div>
               <span>Hotels</span>
             </li>
-            <li onClick={() => handleNavigation("Train")}>
+            <li onClick={handleNavigateTrains}>
               <div className="SecondaryNvigation__Navigation_TrainsImg_div">
                 <img
                   className="SecondaryNvigation_trian_Img"
@@ -84,8 +74,7 @@ const SecondaryNavigation = () => {
               </div>
               <span>Trains</span>
             </li>
-            <li onClick={() => handleNavigation("Bus")}>
-              >
+            <li onClick={handleNavigateBuses}>
               <div className="SecondaryNvigation__Navigation_BusesImg_div">
                 <img
                   className="SecondaryNvigation_Buses_Img"
