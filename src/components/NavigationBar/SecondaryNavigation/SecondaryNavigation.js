@@ -140,6 +140,7 @@ import "./SecondaryNavigation.css";
 import LoginSignUpButton from "../../../Assets/SecondaryNavLoginSignUp.png";
 import MakeMyTripLogo from "../../../Assets/mmtlogo2.png";
 import Login from "../../LoginSignUp/Login";
+import { useNavigate } from "react-router-dom";
 
 const SecondaryNavigation = () => {
   const handleScrollDown = () => {
@@ -147,6 +148,12 @@ const SecondaryNavigation = () => {
       top: 300,
       behavior: "smooth",
     });
+  };
+
+  const navigate = useNavigate();
+
+  const handleNavigateFlights = () => {
+    navigate("/");
   };
 
   const [loginOpen, setLoginOpen] = useState(false);
@@ -168,7 +175,8 @@ const SecondaryNavigation = () => {
       <div className="SecondaryNvigation__Child_Container">
         <div className="SecondaryNvigation__Navigation_Container">
           <img
-            onClick={handleScrollDown}
+            // onClick={handleScrollDown}
+            onClick={handleNavigateFlights}
             className="SecondaryNvigation__Navigation_Container_makeMytrip_logo"
             src={MakeMyTripLogo}
           />

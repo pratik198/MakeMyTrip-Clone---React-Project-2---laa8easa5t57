@@ -65,9 +65,22 @@ const HotelSearchComponent = () => {
             {flightToOpen && <HotelInput onClose={handleFlightCityInput} />}
             <div className="HotelSearchComponenet_Child_ToInput">
               <span>Check-In</span>
-              <DatePicker
+              {/* <DatePicker
                 selected={checkInDate}
                 onChange={(date) => setCheckInDate(date)}
+                dateFormat="dd MMM yy"
+                className="date-picker"
+                minDate={new Date()}
+                
+              /> */}
+              <DatePicker
+                selected={checkInDate}
+                onChange={(date) => {
+                  setCheckInDate(date);
+                  if (checkOutDate < date) {
+                    setCheckOutDate(new Date(date.getTime() + 86400000)); // Add one day
+                  }
+                }}
                 dateFormat="dd MMM yy"
                 className="date-picker"
                 minDate={new Date()}
@@ -81,7 +94,7 @@ const HotelSearchComponent = () => {
                 onChange={(date) => setCheckOutDate(date)}
                 dateFormat="dd MMM yy"
                 className="date-picker"
-                minDate={new Date()}
+                minDate={checkInDate}
               />
             </div>
             <div
